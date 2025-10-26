@@ -506,12 +506,14 @@ export default function KVKKPage() {
                           <h3 className="mb-4 text-lg font-bold text-white">
                             {item.subtitle}
                           </h3>
-                          <p className="mb-4 text-sm leading-relaxed text-gray-400">
-                            {item.text}
-                          </p>
-                          {item.items && (
+                          {item.text && (
+                            <p className="mb-4 text-sm leading-relaxed text-gray-400">
+                              {item.text}
+                            </p>
+                          )}
+                          {"items" in item && item.items && (
                             <ul className="space-y-2">
-                              {item.items.map((listItem, listIdx) => (
+                              {item.items.map((listItem: string, listIdx: number) => (
                                 <li key={listIdx} className="flex items-start gap-3 text-sm text-gray-400">
                                   <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0 text-blue-400" />
                                   <span>{listItem}</span>
