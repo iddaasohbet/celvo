@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FileText, Scale, Shield, AlertTriangle, Ban, Copyright, Mail, Calendar, CheckCircle2, XCircle } from "lucide-react";
+import { FileText, Scale, Shield, AlertTriangle, Ban, Copyright, Mail, Calendar, CheckCircle2, XCircle, Lock } from "lucide-react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
