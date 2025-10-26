@@ -209,17 +209,6 @@ export default function Footer() {
             <Link href="/kullanim-kosullari" className="hover:text-gray-400">Kullanım Koşulları</Link>
           </div>
         </div>
-
-        {/* Minimal Developer Credit */}
-        <div className="mt-6 flex justify-center">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] text-gray-500 transition-colors hover:border-[#d4af37]/40 hover:text-[#d4af37]"
-          >
-            <span>Geliştiren</span>
-            <span className="font-semibold text-gray-400">CihatSoft</span>
-          </Link>
-        </div>
       </div>
     </footer>
   );
