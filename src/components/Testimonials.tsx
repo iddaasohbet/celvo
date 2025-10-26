@@ -6,7 +6,17 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useState } from "react";
 
-const testimonials = [
+type Testimonial = {
+  name: string;
+  role: string;
+  company: string;
+  content: string;
+  rating: number;
+  gradient: string;
+  initial: string;
+};
+
+const testimonials: Testimonial[] = [
   {
     name: "Ahmet Yılmaz",
     role: "CEO",
@@ -70,7 +80,7 @@ const testimonials = [
 ];
 
 // Group testimonials in sets of 3
-const groupedTestimonials = [];
+const groupedTestimonials: Testimonial[][] = [];
 for (let i = 0; i < testimonials.length; i += 3) {
   groupedTestimonials.push(testimonials.slice(i, i + 3));
 }
