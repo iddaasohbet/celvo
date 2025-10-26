@@ -61,6 +61,7 @@ const packages = [
       "3 Ay Ücretsiz Destek",
     ],
     popular: false,
+    gradient: "from-blue-600 to-cyan-500",
   },
   {
     name: "Business",
@@ -80,6 +81,7 @@ const packages = [
       "6 Ay Priority Destek",
     ],
     popular: true,
+    gradient: "from-[#d4af37] to-[#f0d882]",
   },
   {
     name: "Enterprise",
@@ -99,6 +101,7 @@ const packages = [
       "12 Ay Enterprise Support",
     ],
     popular: false,
+    gradient: "from-purple-600 to-pink-500",
   },
 ];
 
