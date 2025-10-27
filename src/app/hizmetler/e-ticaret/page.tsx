@@ -51,7 +51,7 @@ const caseStudies = [
       cart: "Sepet terk oranı %65 → %38",
       revenue: "Aylık ciro 3.5x arttı",
     },
-    image: "https://cihatsoft.com/islerimiz/cocukmontreferans.png",
+    image: "/images/islerimiz/cocukmontreferans.png",
     gradient: "from-yellow-600 to-orange-500",
     technologies: ["WooCommerce", "iyzico", "MNG Kargo", "Google Analytics"],
   },
@@ -693,4 +693,5 @@ export default function ETicaretPage() {
     </>
   );
 }
+
 
