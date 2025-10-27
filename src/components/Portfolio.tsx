@@ -8,6 +8,36 @@ import { useRef, useState, useEffect } from "react";
 
 const projects = [
   {
+    title: "AltınBilgi",
+    domain: "altinbilgi.com",
+    url: "https://www.altinbilgi.com",
+    category: "Finance Platform",
+    description: "Canlı altın fiyatları ve döviz kurları. Gerçek zamanlı piyasa verileri ve hesaplama araçları.",
+    image: "/images/islerimiz/altinbilgi.webp",
+    tags: ["Finance", "Real-time", "API"],
+    gradient: "from-yellow-600 to-amber-500",
+  },
+  {
+    title: "RandevuScripti",
+    domain: "randevuscripti.com",
+    url: "https://www.randevuscripti.com",
+    category: "SaaS Script",
+    description: "Profesyonel online randevu sistemi. Admin paneli, müşteri yönetimi ve takvim entegrasyonu.",
+    image: "/images/islerimiz/randevuscripti.webp",
+    tags: ["SaaS", "Booking", "Admin"],
+    gradient: "from-blue-600 to-indigo-500",
+  },
+  {
+    title: "eDavetiye",
+    domain: "edavetiye.co",
+    url: "https://www.edavetiye.co",
+    category: "Event Platform",
+    description: "Dijital davetiye platformu. RSVP yönetimi, özel şablonlar ve konum entegrasyonu.",
+    image: "/images/islerimiz/edavetiye.webp",
+    tags: ["Events", "RSVP", "Templates"],
+    gradient: "from-rose-600 to-pink-500",
+  },
+  {
     title: "İddaa Sohbet",
     domain: "iddaasohbet.com",
     category: "Forum & Community",
