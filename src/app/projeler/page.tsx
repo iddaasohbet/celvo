@@ -16,7 +16,7 @@ const projects = [
     domain: "iddaasohbet.com",
     category: "Forum & Community Platform",
     description: "Spor bahisleri ve iddaa tahminleri için kapsamlı topluluk platformu. Real-time chat sistemi, forum altyapısı, kullanıcı profilleri ve etkileşim özellikleri ile Türkiye'nin en aktif bahis topluluğu.",
-    image: "/images/islerimiz/iddaa.png",
+    image: "/images/islerimiz/iddaa.webp",
     tags: ["Next.js", "Real-time Chat", "Forum", "Community", "WebSocket"],
     features: ["10,000+ Aktif Kullanıcı", "Real-time Messaging", "SEO Optimized"],
     gradient: "from-blue-600 to-cyan-500",
@@ -29,7 +29,7 @@ const projects = [
     url: "https://www.tevbeterapisi.com/",
     category: "Healthcare & Wellness",
     description: "Online psikolojik danışmanlık ve terapi platformu. Randevu yönetim sistemi, güvenli hasta-terapist iletişimi, ödeme entegrasyonu ve KVKK uyumlu veri yönetimi ile profesyonel sağlık hizmeti.",
-    image: "/images/islerimiz/tevbereferans.png",
+    image: "/images/islerimiz/tevbereferans.webp",
     tags: ["Healthcare", "Booking System", "KVKK", "Payment", "CMS"],
     features: ["Güvenli İletişim", "Randevu Sistemi", "Mobil Uyumlu"],
     gradient: "from-purple-600 to-pink-500",
@@ -41,7 +41,7 @@ const projects = [
     domain: "hajum.net",
     category: "Corporate Website",
     description: "Modern kurumsal web sitesi tasarımı. Responsive design, yüksek performans, SEO optimizasyonu ve kullanıcı dostu admin paneli ile profesyonel marka kimliği yansıması.",
-    image: "/images/islerimiz/hajumreferans.png",
+    image: "/images/islerimiz/hajumreferans.webp",
     tags: ["Corporate", "SEO", "Modern Design", "CMS", "Analytics"],
     features: ["100% SEO Score", "Fast Loading", "Admin Panel"],
     gradient: "from-green-600 to-emerald-500",
@@ -53,7 +53,7 @@ const projects = [
     domain: "firmakontrol.com",
     category: "Business Intelligence Platform",
     description: "Şirket sorgulama ve doğrulama platformu. API entegrasyonları, veri analizi, raporlama araçları ve kullanıcı dashboard'u ile işletmelere güvenilir bilgi sağlayan SaaS çözümü.",
-    image: "/images/islerimiz/firmakontrol.png",
+    image: "/images/islerimiz/firmakontrol.webp",
     tags: ["SaaS", "API Integration", "Analytics", "Dashboard", "Database"],
     features: ["API Gateway", "Real-time Data", "Advanced Search"],
     gradient: "from-orange-600 to-red-500",
@@ -65,7 +65,7 @@ const projects = [
     domain: "cocukmont.com.tr",
     category: "E-Commerce Platform",
     description: "Çocuk giyim e-ticaret sitesi. Güvenli ödeme sistemleri, stok yönetimi, kargo entegrasyonu, admin paneli ve kullanıcı dostu alışveriş deneyimi ile yüksek dönüşüm oranlarına sahip online mağaza.",
-    image: "/images/islerimiz/cocukmontreferans.png",
+    image: "/images/islerimiz/cocukmontreferans.webp",
     tags: ["E-Commerce", "Payment Gateway", "Stock Management", "Cargo", "Admin"],
     features: ["Güvenli Alışveriş", "Hızlı Ödeme", "Stok Takibi"],
     gradient: "from-yellow-600 to-orange-500",
@@ -77,7 +77,7 @@ const projects = [
     domain: "ilen.net",
     category: "Classified Ads Platform",
     description: "İlan ve duyuru platformu. Kategori yönetimi, gelişmiş arama filtreleri, kullanıcı paneli, ilan yönetimi ve SEO uyumlu yapı ile kapsamlı ilan sitesi çözümü.",
-    image: "/images/islerimiz/ilenreferans.png",
+    image: "/images/islerimiz/ilenreferans.webp",
     tags: ["Platform", "Listing", "Search", "User Panel", "Categories"],
     features: ["Gelişmiş Arama", "Kategori Sistemi", "User Dashboard"],
     gradient: "from-indigo-600 to-purple-500",
@@ -90,7 +90,7 @@ const projects = [
     url: "https://pushai.dev/",
     category: "AI-Powered SaaS",
     description: "AI destekli push notification servisi. Gelişmiş hedefleme, automation, analytics dashboard ve API entegrasyonu ile modern bildirim yönetim platformu.",
-    image: "/images/islerimiz/pushai1.png",
+    image: "/images/islerimiz/pushai1.webp",
     tags: ["AI", "SaaS", "API", "Automation", "Analytics"],
     features: ["AI Targeting", "API Integration", "Real-time Analytics"],
     gradient: "from-pink-600 to-purple-600",
@@ -423,4 +423,5 @@ export default function ProjelerPage() {
     </>
   );
 }
+
 

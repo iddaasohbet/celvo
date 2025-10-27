@@ -12,7 +12,7 @@ const projects = [
     domain: "iddaasohbet.com",
     category: "Forum & Community",
     description: "Spor bahisleri topluluk platformu. Real-time chat, forum sistemi ve aktif kullanıcı etkileşimi.",
-    image: "/images/islerimiz/iddaa.png",
+    image: "/images/islerimiz/iddaa.webp",
     tags: ["Forum", "Real-time", "Community"],
     gradient: "from-blue-600 to-cyan-500",
   },
@@ -22,7 +22,7 @@ const projects = [
     url: "https://www.tevbeterapisi.com/",
     category: "Healthcare",
     description: "Online terapi platformu. Randevu sistemi, güvenli iletişim ve hasta yönetimi.",
-    image: "/images/islerimiz/tevbereferans.png",
+    image: "/images/islerimiz/tevbereferans.webp",
     tags: ["Healthcare", "Booking", "CMS"],
     gradient: "from-purple-600 to-pink-500",
   },
@@ -31,7 +31,7 @@ const projects = [
     domain: "hajum.net",
     category: "Corporate",
     description: "Modern kurumsal web sitesi. SEO optimizasyonu ve profesyonel tasarım.",
-    image: "/images/islerimiz/hajumreferans.png",
+    image: "/images/islerimiz/hajumreferans.webp",
     tags: ["Corporate", "SEO", "Modern"],
     gradient: "from-green-600 to-emerald-500",
   },
@@ -40,7 +40,7 @@ const projects = [
     domain: "firmakontrol.com",
     category: "SaaS Platform",
     description: "Firma sorgulama platformu. API entegrasyonu ve veri analizi.",
-    image: "/images/islerimiz/firmakontrol.png",
+    image: "/images/islerimiz/firmakontrol.webp",
     tags: ["SaaS", "API", "Analytics"],
     gradient: "from-orange-600 to-red-500",
   },
@@ -49,7 +49,7 @@ const projects = [
     domain: "cocukmont.com.tr",
     category: "E-Commerce",
     description: "E-ticaret sitesi. Güvenli ödeme, stok yönetimi ve kullanıcı dostu alışveriş.",
-    image: "/images/islerimiz/cocukmontreferans.png",
+    image: "/images/islerimiz/cocukmontreferans.webp",
     tags: ["E-Commerce", "Shopping", "Payment"],
     gradient: "from-yellow-600 to-orange-500",
   },
@@ -58,7 +58,7 @@ const projects = [
     domain: "ilen.net",
     category: "Platform",
     description: "İlan platformu. Gelişmiş arama, kategori yönetimi ve kullanıcı paneli.",
-    image: "/images/islerimiz/ilenreferans.png",
+    image: "/images/islerimiz/ilenreferans.webp",
     tags: ["Platform", "Listing", "Search"],
     gradient: "from-indigo-600 to-purple-500",
   },
@@ -68,7 +68,7 @@ const projects = [
     url: "https://pushai.dev/",
     category: "AI Technology",
     description: "AI-powered push notification servisi. Advanced analytics ve automation.",
-    image: "/images/islerimiz/pushai1.png",
+    image: "/images/islerimiz/pushai1.webp",
     tags: ["AI", "SaaS", "API"],
     gradient: "from-pink-600 to-purple-600",
   },
@@ -288,4 +288,5 @@ export default function Portfolio() {
     </section>
   );
 }
+
 

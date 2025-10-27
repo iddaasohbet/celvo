@@ -48,7 +48,7 @@ const caseStudies = [
     title: "E-Commerce Redesign",
     client: "Çocuk Mont",
     result: "Dönüşüm oranı %145 arttı",
-    image: "/images/islerimiz/cocukmontreferans.png",
+    image: "/images/islerimiz/cocukmontreferans.webp",
     metrics: ["145% Conversion", "60% Bounce Rate ↓", "4.8★ User Rating"],
     gradient: "from-yellow-600 to-orange-500",
   },
@@ -56,7 +56,7 @@ const caseStudies = [
     title: "Healthcare Platform",
     client: "Tevbe Terapisi",
     result: "Kullanıcı memnuniyeti %98",
-    image: "/images/islerimiz/tevbereferans.png",
+    image: "/images/islerimiz/tevbereferans.webp",
     metrics: ["98% Satisfaction", "50% Faster Booking", "AA Accessibility"],
     gradient: "from-purple-600 to-pink-500",
   },
@@ -64,7 +64,7 @@ const caseStudies = [
     title: "SaaS Dashboard",
     client: "PushAI",
     result: "User engagement %200 arttı",
-    image: "/images/islerimiz/pushai1.png",
+    image: "/images/islerimiz/pushai1.webp",
     metrics: ["200% Engagement", "Clean Interface", "5★ Reviews"],
     gradient: "from-pink-600 to-purple-600",
   },
@@ -662,4 +662,5 @@ export default function UIUXTasarimPage() {
     </>
   );
 }
+
 

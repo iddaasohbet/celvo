@@ -49,7 +49,7 @@ const caseStudies = [
       keywords: "1.200+ keyword ilk sayfada",
       ranking: "#1-3 ana keywordlerde",
     },
-    image: "/images/islerimiz/iddaa.png",
+    image: "/images/islerimiz/iddaa.webp",
     gradient: "from-blue-600 to-cyan-500",
   },
   {
@@ -61,7 +61,7 @@ const caseStudies = [
       keywords: "850+ keyword top 10",
       ranking: "Domain Authority 45 → 68",
     },
-    image: "/images/islerimiz/hajumreferans.png",
+    image: "/images/islerimiz/hajumreferans.webp",
     gradient: "from-green-600 to-emerald-500",
   },
   {
@@ -73,7 +73,7 @@ const caseStudies = [
       keywords: "2.500+ indexed keywords",
       ranking: "100K+ monthly organic visits",
     },
-    image: "/images/islerimiz/ilenreferans.png",
+    image: "/images/islerimiz/ilenreferans.webp",
     gradient: "from-indigo-600 to-purple-500",
   },
 ];
@@ -699,5 +699,6 @@ export default function SEOPazarlamaPage() {
     </>
   );
 }
+
 
 

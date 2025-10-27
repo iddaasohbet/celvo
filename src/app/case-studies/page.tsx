@@ -29,7 +29,7 @@ const allCaseStudies = [
       { label: "Top Positions", value: "#1-3", icon: CheckCircle2 },
       { label: "Active Users", value: "10K+", icon: Users },
     ],
-    image: "/images/islerimiz/iddaa.png",
+    image: "/images/islerimiz/iddaa.webp",
     technologies: ["Next.js", "SEO", "Forum Engine", "Real-time Chat"],
     gradient: "from-blue-600 to-cyan-500",
   },
@@ -55,7 +55,7 @@ const allCaseStudies = [
       { label: "Average Rating", value: "4.9/5", icon: Target },
       { label: "User Growth", value: "+180%", icon: TrendingUp },
     ],
-    image: "/images/islerimiz/tevbereferans.png",
+    image: "/images/islerimiz/tevbereferans.webp",
     technologies: ["React", "KVKK Compliant", "Booking System", "Payment Gateway"],
     gradient: "from-purple-600 to-pink-500",
   },
@@ -80,7 +80,7 @@ const allCaseStudies = [
       { label: "Cart Abandonment", value: "38%", icon: ShoppingCart },
       { label: "Revenue Growth", value: "3.5x", icon: BarChart3 },
     ],
-    image: "/images/islerimiz/cocukmontreferans.png",
+    image: "/images/islerimiz/cocukmontreferans.webp",
     technologies: ["WooCommerce", "iyzico", "MNG Kargo", "Google Analytics"],
     gradient: "from-yellow-600 to-orange-500",
   },
@@ -105,7 +105,7 @@ const allCaseStudies = [
       { label: "Top 10 Keywords", value: "850+", icon: Target },
       { label: "Lead Generation", value: "+165%", icon: Users },
     ],
-    image: "/images/islerimiz/hajumreferans.png",
+    image: "/images/islerimiz/hajumreferans.webp",
     technologies: ["Next.js", "Technical SEO", "Google Search Console", "Analytics"],
     gradient: "from-green-600 to-emerald-500",
   },
@@ -131,7 +131,7 @@ const allCaseStudies = [
       { label: "Uptime", value: "99.9%", icon: CheckCircle2 },
       { label: "MoM Growth", value: "+320%", icon: TrendingUp },
     ],
-    image: "/images/islerimiz/pushai1.png",
+    image: "/images/islerimiz/pushai1.webp",
     technologies: ["Next.js", "Node.js API", "PostgreSQL", "Redis", "Vercel"],
     gradient: "from-pink-600 to-purple-600",
   },
@@ -407,6 +407,7 @@ export default function CaseStudiesPage() {
     </>
   );
 }
+
 
 
 
