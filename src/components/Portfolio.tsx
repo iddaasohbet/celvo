@@ -1,12 +1,12 @@
 "use client";
 
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import { ExternalLink, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState, useEffect } from "react";
 
 const projects = [
+  // İlk satır - Yan yana
   {
     title: "AltınBilgi",
     domain: "altinbilgi.com",
@@ -16,26 +16,6 @@ const projects = [
     image: "/images/islerimiz/altinbilgi.webp",
     tags: ["Finance", "Real-time", "API"],
     gradient: "from-yellow-600 to-amber-500",
-  },
-  {
-    title: "RandevuScripti",
-    domain: "randevuscripti.com",
-    url: "https://www.randevuscripti.com",
-    category: "SaaS Script",
-    description: "Profesyonel online randevu sistemi. Admin paneli, müşteri yönetimi ve takvim entegrasyonu.",
-    image: "/images/islerimiz/randevuscripti.webp",
-    tags: ["SaaS", "Booking", "Admin"],
-    gradient: "from-blue-600 to-indigo-500",
-  },
-  {
-    title: "eDavetiye",
-    domain: "edavetiye.co",
-    url: "https://www.edavetiye.co",
-    category: "Event Platform",
-    description: "Dijital davetiye platformu. RSVP yönetimi, özel şablonlar ve konum entegrasyonu.",
-    image: "/images/islerimiz/edavetiye.webp",
-    tags: ["Events", "RSVP", "Templates"],
-    gradient: "from-rose-600 to-pink-500",
   },
   {
     title: "İddaa Sohbet",
@@ -56,6 +36,7 @@ const projects = [
     tags: ["Healthcare", "Booking", "CMS"],
     gradient: "from-purple-600 to-pink-500",
   },
+  // İkinci satır - Yan yana
   {
     title: "Hajum",
     domain: "hajum.net",
@@ -66,6 +47,15 @@ const projects = [
     gradient: "from-green-600 to-emerald-500",
   },
   {
+    title: "Çocuk Mont",
+    domain: "cocukmont.com.tr",
+    category: "E-Commerce",
+    description: "E-ticaret sitesi. Güvenli ödeme, stok yönetimi ve kullanıcı dostu alışveriş.",
+    image: "/images/islerimiz/cocukmontreferans.webp",
+    tags: ["E-Commerce", "Shopping", "Payment"],
+    gradient: "from-yellow-600 to-orange-500",
+  },
+  {
     title: "Firma Kontrol",
     domain: "firmakontrol.com",
     category: "SaaS Platform",
@@ -74,14 +64,26 @@ const projects = [
     tags: ["SaaS", "API", "Analytics"],
     gradient: "from-orange-600 to-red-500",
   },
+  // Geri kalanlar
   {
-    title: "Çocuk Mont",
-    domain: "cocukmont.com.tr",
-    category: "E-Commerce",
-    description: "E-ticaret sitesi. Güvenli ödeme, stok yönetimi ve kullanıcı dostu alışveriş.",
-    image: "/images/islerimiz/cocukmontreferans.webp",
-    tags: ["E-Commerce", "Shopping", "Payment"],
-    gradient: "from-yellow-600 to-orange-500",
+    title: "RandevuScripti",
+    domain: "randevuscripti.com",
+    url: "https://www.randevuscripti.com",
+    category: "SaaS Script",
+    description: "Profesyonel online randevu sistemi. Admin paneli, müşteri yönetimi ve takvim entegrasyonu.",
+    image: "/images/islerimiz/randevuscripti.webp",
+    tags: ["SaaS", "Booking", "Admin"],
+    gradient: "from-blue-600 to-indigo-500",
+  },
+  {
+    title: "eDavetiye",
+    domain: "edavetiye.co",
+    url: "https://www.edavetiye.co",
+    category: "Event Platform",
+    description: "Dijital davetiye platformu. RSVP yönetimi, özel şablonlar ve konum entegrasyonu.",
+    image: "/images/islerimiz/edavetiye.webp",
+    tags: ["Events", "RSVP", "Templates"],
+    gradient: "from-rose-600 to-pink-500",
   },
   {
     title: "İlen",
@@ -105,35 +107,6 @@ const projects = [
 ];
 
 export default function Portfolio() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScroll = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
-
-  useEffect(() => {
-    checkScroll();
-    const ref = scrollRef.current;
-    ref?.addEventListener("scroll", checkScroll);
-    return () => ref?.removeEventListener("scroll", checkScroll);
-  }, []);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = 400;
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <section id="referanslar" className="relative overflow-hidden bg-black py-32 md:py-40">
       {/* Background decoration */}
@@ -190,44 +163,19 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        {/* Carousel Navigation */}
-        <div className="mb-8 flex items-center justify-end gap-3">
-          <button
-            onClick={() => scroll("left")}
-            disabled={!canScrollLeft}
-            className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            disabled={!canScrollRight}
-            className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
-
-        {/* Projects Carousel */}
-        <div
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-8 scrollbar-hide"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-        >
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <motion.a
               key={project.title}
               href={project.url || `https://${project.domain}`}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group relative min-w-[380px] flex-shrink-0 md:min-w-[420px]"
+              className="group relative"
             >
               <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-900 to-black shadow-xl transition-all duration-500 hover:border-white/30 hover:shadow-2xl hover:-translate-y-2">
                 {/* Gradient top line */}
@@ -237,7 +185,7 @@ export default function Portfolio() {
                 <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900">
                   <Image
                     src={project.image}
-                    alt={`${project.title} - CihatSoft Web Tasarım`}
+                    alt={`${project.title} - Dijital Website Web Tasarım`}
                     fill
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   />
@@ -309,12 +257,6 @@ export default function Portfolio() {
           </Link>
         </motion.div>
       </div>
-
-      <style jsx global>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </section>
   );
 }

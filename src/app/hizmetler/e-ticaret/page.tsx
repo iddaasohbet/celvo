@@ -174,7 +174,7 @@ export default function ETicaretPage() {
     description: "Profesyonel e-ticaret sitesi geliştirme ve online mağaza çözümleri",
     provider: {
       "@type": "Organization",
-      name: "CihatSoft",
+      name: "Dijital Website",
     },
   };
 

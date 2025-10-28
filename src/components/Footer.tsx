@@ -63,7 +63,7 @@ export default function Footer() {
               </motion.div>
               <div>
                 <span className="block text-xl font-bold tracking-tight text-white transition-all group-hover:text-[#d4af37]">
-                  CihatSoft
+                  Dijital Website
                 </span>
                 <span className="block text-[10px] uppercase tracking-widest text-gray-500">
                   Digital Agency
@@ -158,7 +158,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-4">
               <motion.a
-                href="mailto:hello@cihatsoft.com"
+                href="mailto:hello@dijitalwebsite.com"
                 whileHover={{ x: 5 }}
                 className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-[#d4af37]/50 hover:bg-white/10"
               >
@@ -167,7 +167,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="text-xs text-gray-500">Email</div>
-                  <div className="text-sm font-medium text-white">hello@cihatsoft.com</div>
+                  <div className="text-sm font-medium text-white">hello@dijitalwebsite.com</div>
                 </div>
               </motion.a>
 
@@ -201,7 +201,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} <span className="font-semibold text-gray-400">CihatSoft</span>. Tüm hakları saklıdır.
+            © {new Date().getFullYear()} <span className="font-semibold text-gray-400">Dijital Website</span>. Tüm hakları saklıdır.
           </p>
           <div className="flex gap-6 text-xs text-gray-600">
             <Link href="/gizlilik-politikasi" className="hover:text-gray-400">Gizlilik Politikası</Link>

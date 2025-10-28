@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "UI/UX Tasarım Hizmetleri - Figma, Adobe XD | CihatSoft İstanbul",
+  title: "UI/UX Tasarım Hizmetleri - Figma, Adobe XD | Dijital Website İstanbul",
   description:
     "Profesyonel UI/UX tasarım hizmetleri. Kullanıcı deneyimi odaklı modern arayüz tasarımları, wireframe, prototip, design system. Figma ve Adobe XD ile award-winning tasarımlar.",
   keywords: [
@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "ui tasarım istanbul",
   ],
   openGraph: {
-    title: "UI/UX Tasarım Hizmetleri | CihatSoft",
+    title: "UI/UX Tasarım Hizmetleri | Dijital Website",
     description: "Kullanıcı odaklı modern UI/UX tasarım hizmetleri. Figma, wireframe, prototype.",
-    url: "https://cihatsoft.com/hizmetler/ui-ux-tasarim",
+    url: "https://dijitalwebsite.com/hizmetler/ui-ux-tasarim",
   },
   alternates: {
-    canonical: "https://cihatsoft.com/hizmetler/ui-ux-tasarim",
+    canonical: "https://dijitalwebsite.com/hizmetler/ui-ux-tasarim",
   },
 };
 

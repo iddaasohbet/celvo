@@ -141,9 +141,9 @@ export default function CaseStudiesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Vaka Çalışmaları - CihatSoft Başarı Hikayeleri",
-    description: "CihatSoft web tasarım ve SEO ajansının gerçekleştirdiği başarılı projeler ve ölçülebilir sonuçlar",
-    url: "https://cihatsoft.com/case-studies",
+    name: "Vaka Çalışmaları - Dijital Website Başarı Hikayeleri",
+    description: "Dijital Website web tasarım ve SEO ajansının gerçekleştirdiği başarılı projeler ve ölçülebilir sonuçlar",
+    url: "https://dijitalwebsite.com/case-studies",
   };
 
   return (

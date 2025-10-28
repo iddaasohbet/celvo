@@ -142,7 +142,7 @@ export default function WebGelistirmePage() {
     description: "Profesyonel web sitesi geliştirme, Next.js, React ile modern web uygulamaları",
     provider: {
       "@type": "Organization",
-      name: "CihatSoft",
+      name: "Dijital Website",
     },
   };
 

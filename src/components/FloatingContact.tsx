@@ -83,7 +83,7 @@ export default function FloatingContact() {
                 </a>
 
                 <a
-                  href="mailto:hello@cihatsoft.com"
+                  href="mailto:hello@dijitalwebsite.com"
                   className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-[#d4af37]/50 hover:bg-white/10"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-500/10">
@@ -91,7 +91,7 @@ export default function FloatingContact() {
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-gray-500">E-posta Gönderin</div>
-                    <div className="text-sm font-medium text-white">hello@cihatsoft.com</div>
+                    <div className="text-sm font-medium text-white">hello@dijitalwebsite.com</div>
                   </div>
                 </a>
 

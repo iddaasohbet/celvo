@@ -11,8 +11,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "Web Tasarım & SEO Hizmetleri İstanbul | CihatSoft - Profesyonel Web Sitesi Tasarımı",
-    template: "%s | CihatSoft - Web Tasarım & SEO Ajansı",
+    default: "Web Tasarım & SEO Hizmetleri İstanbul | Dijital Website - Profesyonel Web Sitesi Tasarımı",
+    template: "%s | Dijital Website - Web Tasarım & SEO Ajansı",
   },
   description:
     "İstanbul'da web tasarım ve SEO hizmetleri. Profesyonel web sitesi tasarımı, kurumsal web tasarım, e-ticaret, mobil uyumlu web tasarım ve Google SEO optimizasyonu. Uygun fiyatlı web tasarım paketleri.",
@@ -38,39 +38,39 @@ export const metadata: Metadata = {
     "seo optimizasyonu",
     "arama motoru optimizasyonu",
   ],
-  metadataBase: new URL("https://cihatsoft.com"),
-  authors: [{ name: "CihatSoft Web Tasarım & SEO Ajansı" }],
-  creator: "CihatSoft",
-  publisher: "CihatSoft",
+  metadataBase: new URL("https://dijitalwebsite.com"),
+  authors: [{ name: "Dijital Website Web Tasarım & SEO Ajansı" }],
+  creator: "Dijital Website",
+  publisher: "Dijital Website",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Web Tasarım & SEO Hizmetleri İstanbul | CihatSoft",
+    title: "Web Tasarım & SEO Hizmetleri İstanbul | Dijital Website",
     description:
       "Profesyonel web tasarım, SEO hizmetleri ve dijital pazarlama çözümleri. Modern, hızlı ve Google dostu web siteleri. Kurumsal web tasarım, e-ticaret ve mobil uyumlu tasarım.",
     type: "website",
     locale: "tr_TR",
-    url: "https://cihatsoft.com",
-    siteName: "CihatSoft Web Tasarım & SEO",
+    url: "https://dijitalwebsite.com",
+    siteName: "Dijital Website Web Tasarım & SEO",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "CihatSoft - Web Tasarım & SEO Hizmetleri",
+        alt: "Dijital Website - Web Tasarım & SEO Hizmetleri",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Tasarım & SEO Hizmetleri İstanbul | CihatSoft",
+    title: "Web Tasarım & SEO Hizmetleri İstanbul | Dijital Website",
     description:
       "Profesyonel web tasarım ve SEO hizmetleri. Modern, hızlı ve Google dostu web siteleri.",
     images: ["/og-image.jpg"],
-    creator: "@cihatsoft",
+    creator: "@dijitalwebsite",
   },
   robots: {
     index: true,
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://cihatsoft.com",
+    canonical: "https://dijitalwebsite.com",
   },
   verification: {
     google: "google-site-verification-code", // Google Search Console'dan alınacak

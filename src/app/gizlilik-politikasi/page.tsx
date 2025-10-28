@@ -28,11 +28,11 @@ const privacySections = [
     content: [
       {
         subtitle: "Veri Sorumlusu",
-        text: "CihatSoft (\"Şirket\", \"biz\", \"bizim\") olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu (\"KVKK\") ve ilgili mevzuat uyarınca veri sorumlusu sıfatıyla hareket etmekteyiz.",
+        text: "Dijital Website (\"Şirket\", \"biz\", \"bizim\") olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu (\"KVKK\") ve ilgili mevzuat uyarınca veri sorumlusu sıfatıyla hareket etmekteyiz.",
       },
       {
         subtitle: "Politikanın Kapsamı",
-        text: "Bu gizlilik politikası, cihatsoft.com web sitesi, alt domainler ve ilgili dijital platformlarımız üzerinden toplanan kişisel verilerin işlenmesine ilişkin uygulamalarımızı açıklamaktadır.",
+        text: "Bu gizlilik politikası, dijitalwebsite.com web sitesi, alt domainler ve ilgili dijital platformlarımız üzerinden toplanan kişisel verilerin işlenmesine ilişkin uygulamalarımızı açıklamaktadır.",
       },
       {
         subtitle: "Yasal Dayanak",
@@ -172,7 +172,7 @@ const privacySections = [
       },
       {
         subtitle: "Başvuru Yöntemi",
-        text: "Haklarınızı kullanmak için hello@cihatsoft.com adresine yazılı olarak başvurabilirsiniz. Başvurunuz en geç 30 gün içinde yanıtlanır.",
+        text: "Haklarınızı kullanmak için hello@dijitalwebsite.com adresine yazılı olarak başvurabilirsiniz. Başvurunuz en geç 30 gün içinde yanıtlanır.",
       },
     ],
   },
@@ -228,7 +228,7 @@ const privacySections = [
     content: [
       {
         subtitle: "Veri Sorumlusu",
-        text: "CihatSoft - Web Tasarım ve SEO Ajansı",
+        text: "Dijital Website - Web Tasarım ve SEO Ajansı",
       },
       {
         subtitle: "Adres",
@@ -236,7 +236,7 @@ const privacySections = [
       },
       {
         subtitle: "E-posta",
-        text: "hello@cihatsoft.com (KVKK başvuruları için)",
+        text: "hello@dijitalwebsite.com (KVKK başvuruları için)",
       },
       {
         subtitle: "Telefon",
@@ -250,9 +250,9 @@ export default function GizlilikPolitikasiPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Gizlilik Politikası - CihatSoft",
-    description: "CihatSoft web tasarım ajansı gizlilik politikası ve KVKK uyum bilgileri",
-    url: "https://cihatsoft.com/gizlilik-politikasi",
+    name: "Gizlilik Politikası - Dijital Website",
+    description: "Dijital Website web tasarım ajansı gizlilik politikası ve KVKK uyum bilgileri",
+    url: "https://dijitalwebsite.com/gizlilik-politikasi",
   };
 
   return (
@@ -431,13 +431,13 @@ export default function GizlilikPolitikasiPage() {
 
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <a
-                  href="mailto:hello@cihatsoft.com"
+                  href="mailto:hello@dijitalwebsite.com"
                   className="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all hover:border-blue-500/50 hover:bg-white/10"
                 >
                   <Mail className="h-8 w-8 text-blue-400" />
                   <div className="text-center">
                     <div className="mb-1 text-sm font-semibold text-white">E-posta</div>
-                    <div className="text-sm text-gray-400">hello@cihatsoft.com</div>
+                    <div className="text-sm text-gray-400">hello@dijitalwebsite.com</div>
                   </div>
                 </a>
 

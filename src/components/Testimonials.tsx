@@ -22,7 +22,7 @@ const testimonials: Testimonial[] = [
     role: "CEO",
     company: "TechCorp",
     content:
-      "CihatSoft ile çalışmak harika bir deneyimdi. Web sitemiz modern, hızlı ve SEO uyumlu. Organik trafiğimiz 3 ay içinde %250 arttı. Profesyonel ekip, zamanında teslimat.",
+      "Dijital Website ile çalışmak harika bir deneyimdi. Web sitemiz modern, hızlı ve SEO uyumlu. Organik trafiğimiz 3 ay içinde %250 arttı. Profesyonel ekip, zamanında teslimat.",
     rating: 5,
     gradient: "from-blue-600 to-cyan-500",
     initial: "A",
@@ -72,7 +72,7 @@ const testimonials: Testimonial[] = [
     role: "CTO",
     company: "Innovation Labs",
     content:
-      "Teknik danışmanlık ve cloud migration hizmeti için CihatSoft'u seçtik. Güvenilir, deneyimli ve çözüm odaklı bir ekip. Sistemlerimiz artık daha hızlı ve güvenli.",
+      "Teknik danışmanlık ve cloud migration hizmeti için Dijital Website'i seçtik. Güvenilir, deneyimli ve çözüm odaklı bir ekip. Sistemlerimiz artık daha hızlı ve güvenli.",
     rating: 5,
     gradient: "from-indigo-600 to-purple-500",
     initial: "E",

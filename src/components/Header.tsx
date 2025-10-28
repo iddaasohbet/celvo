@@ -68,7 +68,7 @@ export default function Header() {
           </motion.div>
           <div>
             <span className="block text-xl font-bold tracking-tight text-white transition-all group-hover:text-[#d4af37]">
-              CihatSoft
+              Dijital Website
             </span>
             <span className="block text-[10px] uppercase tracking-widest text-gray-500">
               Digital Agency

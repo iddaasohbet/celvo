@@ -189,7 +189,7 @@ export default function SEOPazarlamaPage() {
     description: "Google SEO optimizasyonu ve dijital pazarlama stratejileri",
     provider: {
       "@type": "Organization",
-      name: "CihatSoft",
+      name: "Dijital Website",
     },
   };
 

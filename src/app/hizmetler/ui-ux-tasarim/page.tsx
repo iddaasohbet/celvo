@@ -196,7 +196,7 @@ export default function UIUXTasarimPage() {
     description: "Profesyonel kullanıcı arayüzü ve deneyim tasarımı hizmetleri",
     provider: {
       "@type": "Organization",
-      name: "CihatSoft",
+      name: "Dijital Website",
     },
   };
 

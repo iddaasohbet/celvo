@@ -57,9 +57,9 @@ export default function HakkimizdaPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "Hakkımızda - CihatSoft Web Tasarım & SEO",
-    description: "İstanbul web tasarım ve SEO ajansı CihatSoft hakkında",
-    url: "https://cihatsoft.com/hakkimizda",
+    name: "Hakkımızda - Dijital Website Web Tasarım & SEO",
+    description: "İstanbul web tasarım ve SEO ajansı Dijital Website hakkında",
+    url: "https://dijitalwebsite.com/hakkimizda",
   };
 
   return (
@@ -97,7 +97,7 @@ export default function HakkimizdaPage() {
                 className="h-2 w-2 rounded-full bg-[#d4af37]"
               />
               <span className="text-sm font-bold uppercase tracking-[0.3em] text-[#d4af37]">
-                About CihatSoft
+                About Dijital Website
               </span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1], opacity: [1, 0.5, 1] }}
@@ -186,7 +186,7 @@ export default function HakkimizdaPage() {
 
                 <div className="space-y-5 text-base leading-relaxed text-gray-300">
                   <p>
-                    <strong className="text-white">CihatSoft</strong>, İstanbul'da faaliyet gösteren <strong className="text-white">profesyonel web tasarım ve SEO ajansıdır</strong>. 
+                    <strong className="text-white">Dijital Website</strong>, İstanbul'da faaliyet gösteren <strong className="text-white">profesyonel web tasarım ve SEO ajansıdır</strong>. 
                     Modern web teknolojileri ile kurumsal web siteleri, e-ticaret platformları ve SEO uyumlu dijital çözümler sunuyoruz.
                   </p>
 
@@ -220,7 +220,7 @@ export default function HakkimizdaPage() {
                 <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-purple-500 to-[#d4af37]" />
 
                 <h2 className="mb-6 text-3xl font-bold text-white">
-                  Neden CihatSoft?
+                  Neden Dijital Website?
                 </h2>
 
                 <div className="space-y-5 text-base leading-relaxed text-gray-300">
@@ -362,7 +362,7 @@ export default function HakkimizdaPage() {
             >
               <div className="space-y-8 text-base leading-relaxed text-gray-300">
                 <p className="text-lg">
-                  <strong className="text-xl text-white">İstanbul web tasarım</strong> sektöründe faaliyet gösteren <strong className="text-white">CihatSoft</strong>, 
+                  <strong className="text-xl text-white">İstanbul web tasarım</strong> sektöründe faaliyet gösteren <strong className="text-white">Dijital Website</strong>, 
                   modern ve <strong className="text-white">SEO uyumlu web siteleri</strong> tasarlayan profesyonel bir ajansız. Kurumsal firmalardan 
                   e-ticaret sitelerine, kişisel bloglardan SaaS platformlarına kadar geniş bir yelpazede <strong className="text-white">web tasarım hizmeti</strong> sunuyoruz.
                 </p>

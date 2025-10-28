@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ücretsiz Teklif Al - Web Tasarım & SEO Fiyat Teklifi | CihatSoft",
+  title: "Ücretsiz Teklif Al - Web Tasarım & SEO Fiyat Teklifi | Dijital Website",
   description:
     "Web tasarım ve SEO hizmetleri için ücretsiz fiyat teklifi alın. Profesyonel web sitesi tasarımı, e-ticaret ve SEO hizmetleri için detaylı teklif. 24 saat içinde yanıt.",
   keywords: [
@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     "web tasarım ücretsiz teklif",
   ],
   openGraph: {
-    title: "Ücretsiz Teklif Al - Web Tasarım & SEO | CihatSoft",
+    title: "Ücretsiz Teklif Al - Web Tasarım & SEO | Dijital Website",
     description: "Web tasarım ve SEO hizmetleri için ücretsiz fiyat teklifi alın.",
-    url: "https://cihatsoft.com/teklif-al",
+    url: "https://dijitalwebsite.com/teklif-al",
   },
   alternates: {
-    canonical: "https://cihatsoft.com/teklif-al",
+    canonical: "https://dijitalwebsite.com/teklif-al",
   },
 };
 

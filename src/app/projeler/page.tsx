@@ -149,9 +149,9 @@ export default function ProjelerPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Projelerimiz - CihatSoft Web Tasarım Portföyü",
-    description: "CihatSoft web tasarım ajansının gerçekleştirdiği başarılı projeler",
-    url: "https://cihatsoft.com/projeler",
+    name: "Projelerimiz - Dijital Website Web Tasarım Portföyü",
+    description: "Dijital Website web tasarım ajansının gerçekleştirdiği başarılı projeler",
+    url: "https://dijitalwebsite.com/projeler",
   };
 
   return (
@@ -280,7 +280,7 @@ export default function ProjelerPage() {
                       <div className="relative aspect-[16/10] overflow-hidden rounded-2xl lg:aspect-auto lg:h-full lg:min-h-[400px] lg:rounded-none">
                         <Image
                           src={project.image}
-                          alt={`${project.title} - CihatSoft Web Tasarım Projesi`}
+                          alt={`${project.title} - Dijital Website Web Tasarım Projesi`}
                           fill
                           className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
                         />
@@ -388,7 +388,7 @@ export default function ProjelerPage() {
 
               <div className="space-y-5 text-base leading-relaxed text-gray-300">
                 <p>
-                  <strong className="text-white">CihatSoft web tasarım ajansı</strong> olarak, e-ticaret sitelerinden SaaS platformlarına, 
+                  <strong className="text-white">Dijital Website web tasarım ajansı</strong> olarak, e-ticaret sitelerinden SaaS platformlarına, 
                   kurumsal web sitelerinden community platformlarına kadar geniş bir yelpazede <strong className="text-white">başarılı web tasarım projeleri</strong> gerçekleştirdik. 
                   Her projemizde modern teknolojiler, <strong className="text-white">SEO optimizasyonu</strong> ve kullanıcı deneyimi odaklı yaklaşımımızla 
                   müşterilerimizin dijital hedeflerine ulaşmalarını sağladık.

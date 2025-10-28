@@ -27,7 +27,7 @@ const kvkkSections = [
     content: [
       {
         subtitle: "Şirket Unvanı",
-        text: "CihatSoft Web Tasarım ve SEO Ajansı",
+        text: "Dijital Website Web Tasarım ve SEO Ajansı",
       },
       {
         subtitle: "Adres",
@@ -35,7 +35,7 @@ const kvkkSections = [
       },
       {
         subtitle: "E-posta",
-        text: "hello@cihatsoft.com",
+        text: "hello@dijitalwebsite.com",
       },
       {
         subtitle: "Telefon",
@@ -224,7 +224,7 @@ const kvkkSections = [
         subtitle: "Başvuru Yöntemleri",
         text: "Haklarınızı kullanmak için aşağıdaki yöntemlerle başvurabilirsiniz:",
         items: [
-          "• E-posta: hello@cihatsoft.com",
+          "• E-posta: hello@dijitalwebsite.com",
           "• Posta: İstanbul, Türkiye (kayıtlı posta ile)",
           "• Islak imzalı dilekçe ile şahsen başvuru",
         ],
@@ -299,9 +299,9 @@ export default function KVKKPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "KVKK Aydınlatma Metni - CihatSoft",
+    name: "KVKK Aydınlatma Metni - Dijital Website",
     description: "6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca hazırlanan aydınlatma metni",
-    url: "https://cihatsoft.com/kvkk",
+    url: "https://dijitalwebsite.com/kvkk",
   };
 
   return (
@@ -605,13 +605,13 @@ export default function KVKKPage() {
 
               <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
                 <a
-                  href="mailto:hello@cihatsoft.com?subject=KVKK Başvurusu"
+                  href="mailto:hello@dijitalwebsite.com?subject=KVKK Başvurusu"
                   className="group flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-blue-500/50 hover:bg-white/10"
                 >
                   <Mail className="h-10 w-10 text-blue-400" />
                   <div className="text-center">
                     <div className="mb-2 text-sm font-bold text-white">E-posta ile Başvuru</div>
-                    <div className="text-sm text-gray-400">hello@cihatsoft.com</div>
+                    <div className="text-sm text-gray-400">hello@dijitalwebsite.com</div>
                   </div>
                 </a>
 

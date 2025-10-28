@@ -29,15 +29,15 @@ const termsSections = [
     content: [
       {
         subtitle: "Kabullenme",
-        text: "Bu web sitesini (cihatsoft.com) kullanarak, aşağıdaki kullanım koşullarını kabul etmiş sayılırsınız. Koşulları kabul etmiyorsanız, lütfen siteyi kullanmayınız.",
+        text: "Bu web sitesini (dijitalwebsite.com) kullanarak, aşağıdaki kullanım koşullarını kabul etmiş sayılırsınız. Koşulları kabul etmiyorsanız, lütfen siteyi kullanmayınız.",
       },
       {
         subtitle: "Kapsam",
-        text: "Bu koşullar, cihatsoft.com ana domain'i, tüm alt domainler ve ilgili tüm dijital platformlarımız için geçerlidir.",
+        text: "Bu koşullar, dijitalwebsite.com ana domain'i, tüm alt domainler ve ilgili tüm dijital platformlarımız için geçerlidir.",
       },
       {
         subtitle: "Güncellemeler",
-        text: "CihatSoft, bu koşulları önceden haber vermeksizin değiştirme hakkını saklı tutar. Değişiklikler bu sayfada yayınlandığı anda yürürlüğe girer.",
+        text: "Dijital Website, bu koşulları önceden haber vermeksizin değiştirme hakkını saklı tutar. Değişiklikler bu sayfada yayınlandığı anda yürürlüğe girer.",
       },
     ],
   },
@@ -49,11 +49,11 @@ const termsSections = [
     content: [
       {
         subtitle: "Şirket / Biz",
-        text: "CihatSoft Web Tasarım ve SEO Ajansı",
+        text: "Dijital Website Web Tasarım ve SEO Ajansı",
       },
       {
         subtitle: "Web Sitesi / Platform",
-        text: "cihatsoft.com domaini ve alt domainler",
+        text: "dijitalwebsite.com domaini ve alt domainler",
       },
       {
         subtitle: "Kullanıcı / Siz",
@@ -77,7 +77,7 @@ const termsSections = [
     content: [
       {
         subtitle: "Hizmet Kapsamı",
-        text: "CihatSoft aşağıdaki hizmetleri sunar:",
+        text: "Dijital Website aşağıdaki hizmetleri sunar:",
         items: [
           "• Web sitesi tasarımı ve geliştirme",
           "• E-ticaret platformu kurulumu",
@@ -93,7 +93,7 @@ const termsSections = [
       },
       {
         subtitle: "Teslimat ve Süre",
-        text: "Proje teslimat süreleri, sözleşmede veya teklifte belirtilir. CihatSoft, makul çaba göstermekle birlikte, force majeure durumlarında gecikme sorumluluğu kabul etmez.",
+        text: "Proje teslimat süreleri, sözleşmede veya teklifte belirtilir. Dijital Website, makul çaba göstermekle birlikte, force majeure durumlarında gecikme sorumluluğu kabul etmez.",
       },
     ],
   },
@@ -105,7 +105,7 @@ const termsSections = [
     content: [
       {
         subtitle: "Telif Hakları",
-        text: "Web sitesindeki tüm içerik (metin, görsel, logo, kod, tasarım vb.) CihatSoft'a aittir ve telif hakları ile korunmaktadır.",
+        text: "Web sitesindeki tüm içerik (metin, görsel, logo, kod, tasarım vb.) Dijital Website'a aittir ve telif hakları ile korunmaktadır.",
         items: [
           "• Yazılı izin olmadan kopyalanamaz, çoğaltılamaz",
           "• Ticari amaçla kullanılamaz",
@@ -115,7 +115,7 @@ const termsSections = [
       },
       {
         subtitle: "Müşteri Projeleri",
-        text: "Müşteriler için geliştirilen projeler, sözleşmede aksi belirtilmedikçe müşteriye devredilir. Ancak CihatSoft, portfolyo ve referans olarak kullanma hakkını saklı tutar.",
+        text: "Müşteriler için geliştirilen projeler, sözleşmede aksi belirtilmedikçe müşteriye devredilir. Ancak Dijital Website, portfolyo ve referans olarak kullanma hakkını saklı tutar.",
       },
       {
         subtitle: "Açık Kaynak",
@@ -181,7 +181,7 @@ const termsSections = [
     content: [
       {
         subtitle: "Hizmet Garantisi",
-        text: "CihatSoft, hizmetlerini \"olduğu gibi\" sunar. Web sitesinin kesintisiz ve hatasız çalışacağına dair garanti vermez.",
+        text: "Dijital Website, hizmetlerini \"olduğu gibi\" sunar. Web sitesinin kesintisiz ve hatasız çalışacağına dair garanti vermez.",
       },
       {
         subtitle: "Üçüncü Taraf Linkleri",
@@ -189,7 +189,7 @@ const termsSections = [
       },
       {
         subtitle: "Zarar Sorumluluğu",
-        text: "CihatSoft, web sitesinin kullanımından kaynaklanan dolaylı, arızi veya sonuç olarak doğan zararlardan sorumlu tutulamaz. Sorumluluk, sözleşme bedeli ile sınırlıdır.",
+        text: "Dijital Website, web sitesinin kullanımından kaynaklanan dolaylı, arızi veya sonuç olarak doğan zararlardan sorumlu tutulamaz. Sorumluluk, sözleşme bedeli ile sınırlıdır.",
       },
       {
         subtitle: "Force Majeure",
@@ -225,7 +225,7 @@ const termsSections = [
     content: [
       {
         subtitle: "Güncelleme Hakkı",
-        text: "CihatSoft, bu kullanım koşullarını istediği zaman, önceden haber vermeksizin değiştirme hakkını saklı tutar.",
+        text: "Dijital Website, bu kullanım koşullarını istediği zaman, önceden haber vermeksizin değiştirme hakkını saklı tutar.",
       },
       {
         subtitle: "Yürürlük",
@@ -288,9 +288,9 @@ export default function KullanimKosullariPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Kullanım Koşulları - CihatSoft",
-    description: "CihatSoft web sitesi kullanım koşulları ve yasal bilgilendirme",
-    url: "https://cihatsoft.com/kullanim-kosullari",
+    name: "Kullanım Koşulları - Dijital Website",
+    description: "Dijital Website web sitesi kullanım koşulları ve yasal bilgilendirme",
+    url: "https://dijitalwebsite.com/kullanim-kosullari",
   };
 
   return (
@@ -332,7 +332,7 @@ export default function KullanimKosullariPage() {
               </h1>
 
               <p className="mx-auto mb-8 max-w-3xl text-lg leading-relaxed text-gray-400">
-                CihatSoft web sitesi ve hizmetlerinin kullanımına ilişkin şartlar ve koşullar.
+                Dijital Website web sitesi ve hizmetlerinin kullanımına ilişkin şartlar ve koşullar.
                 Yasal haklar ve yükümlülükleriniz hakkında detaylı bilgi.
               </p>
 
@@ -527,11 +527,11 @@ export default function KullanimKosullariPage() {
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <a
-                  href="mailto:hello@cihatsoft.com?subject=Kullanım Koşulları Hakkında"
+                  href="mailto:hello@dijitalwebsite.com?subject=Kullanım Koşulları Hakkında"
                   className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-purple-500/50 transition-all hover:scale-105"
                 >
                   <Mail className="h-5 w-5" />
-                  hello@cihatsoft.com
+                  hello@dijitalwebsite.com
                 </a>
 
                 <a

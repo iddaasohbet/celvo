@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "E-Ticaret Sitesi Kurulumu - Online Mağaza | CihatSoft İstanbul",
+  title: "E-Ticaret Sitesi Kurulumu - Online Mağaza | Dijital Website İstanbul",
   description:
     "Profesyonel e-ticaret sitesi kurulumu. Shopify, WooCommerce, custom online mağaza. Güvenli ödeme, stok yönetimi, kargo entegrasyonu. E-ticaret web tasarım paketleri.",
   keywords: [
@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "e-ticaret paketi",
   ],
   openGraph: {
-    title: "E-Ticaret Sitesi Kurulumu | CihatSoft",
+    title: "E-Ticaret Sitesi Kurulumu | Dijital Website",
     description: "Conversion-optimized e-ticaret siteleri. Güvenli, hızlı ve kullanıcı dostu online mağazalar.",
-    url: "https://cihatsoft.com/hizmetler/e-ticaret",
+    url: "https://dijitalwebsite.com/hizmetler/e-ticaret",
   },
   alternates: {
-    canonical: "https://cihatsoft.com/hizmetler/e-ticaret",
+    canonical: "https://dijitalwebsite.com/hizmetler/e-ticaret",
   },
 };
 
