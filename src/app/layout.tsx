@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     canonical: "https://dijitalwebsite.com",
   },
   verification: {
-    google: "google-site-verification-code", // Google Search Console'dan alınacak
+    google: "dn_Bg0jpfYeHAf-TZ3WBfugfxrXOBa9t_wYtnLTmwvg",
   },
 };
 
