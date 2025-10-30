@@ -31,7 +31,7 @@ export default function Hero() {
   );
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black pt-20">
+    <section className="relative min-h-screen overflow-hidden bg-black pt-20 sm:pt-24">
       {/* Premium Background Effects */}
       <div className="absolute inset-0 -z-10">
         {/* Main gradient overlay */}
@@ -67,7 +67,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 py-32 sm:py-40">
+      <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-32 lg:py-40">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left Column - Content */}
           <motion.div
@@ -159,7 +159,7 @@ export default function Hero() {
                 href="/koleksiyon"
                 className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#d4af37] to-[#f0d882] px-8 py-4 text-base font-semibold text-black shadow-2xl shadow-[#d4af37]/50 transition-all hover:scale-105 hover:shadow-[#d4af37]/70"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
                   Koleksiyonu Keşfet
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -168,10 +168,12 @@ export default function Hero() {
 
               <Link
                 href="/hakkimizda"
-                className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-[#d4af37]/50 hover:bg-white/10"
+                className="group relative overflow-hidden rounded-full border border-white/20 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-[#d4af37]/50 hover:bg-white/10"
               >
-                Hakkımızda
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
+                  Hakkımızda
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </span>
               </Link>
             </motion.div>
 
