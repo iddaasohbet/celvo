@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import pool from "@/lib/db";
 
 export async function POST(request: Request) {
   try {
@@ -11,21 +10,41 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
     }
 
+    // Convert file to base64 for database storage
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
+    const base64 = buffer.toString('base64');
+    const mimeType = file.type;
+    const fileName = `upload_${Date.now()}_${file.name}`;
+    
+    // Store in database as data URL
+    const imageDataUrl = `data:${mimeType};base64,${base64}`;
+    const imagePath = `/images/${fileName}`;
 
-    // Save to public/images
-    const fileName = file.name;
-    const filePath = path.join(process.cwd(), "public", "images", fileName);
-    fs.writeFileSync(filePath, buffer);
+    const connection = await pool.getConnection();
+
+    // Get max sort_order
+    const [maxResult] = await connection.query(
+      "SELECT MAX(sort_order) as max_order FROM products"
+    );
+    const maxOrder = (maxResult as any[])[0]?.max_order || 0;
+
+    // Insert into products table
+    await connection.query(
+      `INSERT INTO products (image_path, name, category, sort_order) VALUES (?, ?, ?, ?)`,
+      [imageDataUrl, 'Yeni Ürün', 'Tekstil', maxOrder + 1]
+    );
+
+    connection.release();
 
     return NextResponse.json({
       success: true,
-      imagePath: `/images/${fileName}`,
+      imagePath: imageDataUrl,
     });
   } catch (error) {
+    console.error("Upload error:", error);
     return NextResponse.json(
-      { error: "Failed to upload image" },
+      { error: "Failed to upload image: " + (error as Error).message },
       { status: 500 }
     );
   }

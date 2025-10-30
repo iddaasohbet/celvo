@@ -8,25 +8,11 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useState, useEffect } from "react";
 
-const productImages = [
-  "/images/demo.jpg",
-];
 
 export default function Hero() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  
-  // Default data - will be replaced with DB later
-  const heroData = {
-    badge: "Premium Tekstil Koleksiyonu",
-    title: "Lüks ve Zarafet Evinizde",
-    description: "Celvo ile yaşam alanlarınızı premium tekstil ürünleriyle dönüştürün. En kaliteli kumaşlar, zarif tasarımlar ve kusursuz işçilik.",
-    trustIndicators: { 
-      customers: "1000+", 
-      customersLabel: "Mutlu Müşteri",
-      quality: "%100",
-      qualityLabel: "Kalite Garantisi"
-    },
-  };
+  const [heroData, setHeroData] = useState<any>(null);
+  const [products, setProducts] = useState<any[]>([]);
   
   const [emblaRef] = useEmblaCarousel(
     { 
@@ -35,6 +21,36 @@ export default function Hero() {
     },
     [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
+
+  useEffect(() => {
+    // Load hero data from DB
+    fetch("/api/admin/get-content?type=hero")
+      .then((res) => res.json())
+      .then((data) => setHeroData(data))
+      .catch(() => {
+        setHeroData({
+          badge: "Premium Tekstil Koleksiyonu",
+          title: "Lüks ve Zarafet Evinizde",
+          description: "Celvo ile yaşam alanlarınızı premium tekstil ürünleriyle dönüştürün.",
+          trustIndicators: { 
+            customers: "1000+", 
+            customersLabel: "Mutlu Müşteri",
+            quality: "%100",
+            qualityLabel: "Kalite Garantisi"
+          },
+        });
+      });
+
+    // Load products from DB
+    fetch("/api/admin/get-content?type=products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products))
+      .catch(() => setProducts([{ id: 1, image: "/images/demo.jpg" }]));
+  }, []);
+
+  if (!heroData || products.length === 0) {
+    return <div className="min-h-screen bg-black" />;
+  }
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-black pt-20 sm:pt-24">
@@ -199,16 +215,16 @@ export default function Hero() {
               <div className="relative overflow-hidden rounded-3xl border border-[#d4af37]/30 bg-gradient-to-br from-white/5 to-white/10 p-2 backdrop-blur-sm">
                 <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
                   <div className="flex">
-                    {productImages.map((image, index) => (
+                    {products.map((product, index) => (
                       <div
-                        key={index}
-                        onClick={() => setSelectedImage(image)}
+                        key={product.id}
+                        onClick={() => setSelectedImage(product.image)}
                         className="relative min-w-0 flex-[0_0_100%] cursor-pointer"
                       >
                         <div className="relative aspect-[3/4]">
                           <Image
-                            src={image}
-                            alt={`Celvo Premium Tekstil Ürünü ${index + 1}`}
+                            src={product.image}
+                            alt={product.name || `Celvo Premium Tekstil Ürünü ${index + 1}`}
                             fill
                             className="object-cover transition-transform duration-500 hover:scale-105"
                             priority={index === 0}
@@ -222,25 +238,6 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Floating badge */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1, duration: 0.6 }}
-                  className="absolute bottom-6 left-6 right-6 z-10"
-                >
-                  <div className="rounded-2xl border border-white/20 bg-black/80 p-4 backdrop-blur-xl">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-xs text-gray-400">Yeni Koleksiyon</p>
-                        <p className="text-lg font-bold text-white">2025 Premium</p>
-                      </div>
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#d4af37] to-[#f0d882]">
-                        <ShoppingBag className="h-6 w-6 text-black" />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
 
               {/* Floating quality badge */}

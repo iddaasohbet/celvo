@@ -138,34 +138,21 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
     }
   };
 
-  const deleteImage = async (imagePath: string, productId: number) => {
-    if (!confirm("Bu resmi silmek istediğinize emin misiniz?")) return;
+  const deleteImage = async (productId: number) => {
+    if (!confirm("Bu ürünü silmek istediğinize emin misiniz?")) return;
 
     setLoading(true);
     setMessage("");
     
     try {
-      // Delete image file first
       const deleteRes = await fetch("/api/admin/delete-image", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ imagePath }),
+        body: JSON.stringify({ productId }),
       });
 
       if (deleteRes.ok) {
-        // Remove from products and reindex IDs
-        const filteredProducts = productsData.products.filter((p: any) => p.id !== productId);
-        const reindexedProducts = filteredProducts.map((p: any, index: number) => ({
-          ...p,
-          id: index + 1,
-        }));
-
-        const updatedProducts = {
-          products: reindexedProducts,
-        };
-
-        await saveContent("products", updatedProducts);
-        setMessage("✅ Resim başarıyla silindi!");
+        setMessage("✅ Ürün başarıyla silindi!");
         
         // Reload data
         await loadContent();
@@ -679,7 +666,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
-                          deleteImage(product.image, product.id);
+                          deleteImage(product.id);
                         }}
                         disabled={loading}
                         className="flex items-center gap-2 rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-2 text-sm text-red-400 transition-all hover:border-red-500/40 hover:bg-red-500/20 disabled:opacity-50"
@@ -1010,7 +997,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
-                          deleteImage(product.image, product.id);
+                          deleteImage(product.id);
                         }}
                         disabled={loading}
                         className="rounded-full bg-red-500 p-3 text-white transition-all hover:bg-red-600 disabled:opacity-50"

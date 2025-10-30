@@ -1,47 +1,29 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import pool from "@/lib/db";
 
 export async function POST(request: Request) {
   try {
-    const { imagePath } = await request.json();
+    const { productId } = await request.json();
 
-    if (!imagePath) {
+    if (!productId) {
       return NextResponse.json(
-        { error: "Resim yolu gerekli" },
+        { error: "Ürün ID gerekli" },
         { status: 400 }
       );
     }
 
-    // Remove leading slash if exists
-    const cleanPath = imagePath.startsWith("/") ? imagePath.slice(1) : imagePath;
-    const filePath = path.join(process.cwd(), "public", cleanPath);
-    
-    console.log("Deleting file:", filePath);
+    const connection = await pool.getConnection();
 
-    if (fs.existsSync(filePath)) {
-      try {
-        fs.unlinkSync(filePath);
-        console.log("File deleted successfully");
-        return NextResponse.json({ success: true, message: "Resim silindi" });
-      } catch (unlinkError) {
-        console.error("Unlink error:", unlinkError);
-        return NextResponse.json(
-          { error: "Dosya silinirken hata oluştu" },
-          { status: 500 }
-        );
-      }
-    } else {
-      console.log("File not found:", filePath);
-      return NextResponse.json(
-        { error: "Resim bulunamadı: " + filePath },
-        { status: 404 }
-      );
-    }
+    // Delete product from database
+    await connection.query("DELETE FROM products WHERE id = ?", [productId]);
+
+    connection.release();
+    
+    return NextResponse.json({ success: true, message: "Ürün silindi" });
   } catch (error) {
-    console.error("Delete image error:", error);
+    console.error("Delete error:", error);
     return NextResponse.json(
-      { error: "Resim silinemedi: " + (error as Error).message },
+      { error: "Silme hatası: " + (error as Error).message },
       { status: 500 }
     );
   }

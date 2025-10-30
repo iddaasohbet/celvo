@@ -8,16 +8,28 @@ import { useState, useEffect } from "react";
 export default function Collection() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  
-  // Default products - will be replaced with DB later
-  const products = [
-    {
-      id: 1,
-      image: "/images/demo.jpg",
-      name: "Premium Koleksiyon",
-      category: "Tekstil",
-    },
-  ];
+  const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    // Load products from DB
+    fetch("/api/admin/get-content?type=products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products))
+      .catch(() => {
+        setProducts([
+          {
+            id: 1,
+            image: "/images/demo.jpg",
+            name: "Premium Koleksiyon",
+            category: "Tekstil",
+          },
+        ]);
+      });
+  }, []);
+
+  if (products.length === 0) {
+    return <div className="min-h-screen bg-black py-32" />;
+  }
 
   return (
     <section className="relative overflow-hidden bg-black py-32">
