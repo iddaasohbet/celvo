@@ -675,11 +675,17 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
                         />
                       </div>
                       <button
-                        onClick={() => deleteImage(product.image, product.id)}
-                        className="flex items-center gap-2 rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-2 text-sm text-red-400 transition-all hover:border-red-500/40 hover:bg-red-500/20"
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          deleteImage(product.image, product.id);
+                        }}
+                        disabled={loading}
+                        className="flex items-center gap-2 rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-2 text-sm text-red-400 transition-all hover:border-red-500/40 hover:bg-red-500/20 disabled:opacity-50"
                       >
                         <Trash2 className="h-4 w-4" />
-                        Sil
+                        {loading ? "Siliniyor..." : "Sil"}
                       </button>
                     </div>
                   </div>
@@ -1000,11 +1006,20 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all group-hover:bg-black/80 group-hover:opacity-100">
                       <button
-                        onClick={() => deleteImage(product.image, product.id)}
-                        className="rounded-full bg-red-500 p-3 text-white transition-all hover:bg-red-600"
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          deleteImage(product.image, product.id);
+                        }}
+                        disabled={loading}
+                        className="rounded-full bg-red-500 p-3 text-white transition-all hover:bg-red-600 disabled:opacity-50"
                       >
                         <Trash2 className="h-5 w-5" />
                       </button>
+                    </div>
+                    <div className="absolute bottom-2 left-2 right-2 rounded-lg bg-black/80 p-2 text-center text-xs text-white backdrop-blur-sm">
+                      {product.name}
                     </div>
                   </div>
                 ))}

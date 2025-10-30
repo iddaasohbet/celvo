@@ -9,21 +9,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { useState, useEffect } from "react";
 
 const productImages = [
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.11_c25d46bb.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.11_fed79ce4.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_042327b0.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_18b6ed9b.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_a0a2c8d5.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_bae398a8.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.13_4fb3ef11.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.13_a8cb2186.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.13_c67505e1.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.53_fb63f7e2.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.54_48bcc760.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 15.17.29_6197b39a.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 15.18.34_2d48427f.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 16.05.14_f3395ad9.jpg",
-  "/images/WhatsApp Görsel 2025-10-30 saat 16.11.58_9e6d5aff.jpg",
+  "/images/demo.jpg",
 ];
 
 export default function Hero() {
