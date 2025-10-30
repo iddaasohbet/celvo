@@ -1,11 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, ShoppingBag, Star } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Sparkles, ShoppingBag, Star, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useState } from "react";
 
 const productImages = [
   "/images/WhatsApp Görsel 2025-10-30 saat 14.36.11_c25d46bb.jpg",
@@ -19,9 +20,13 @@ const productImages = [
   "/images/WhatsApp Görsel 2025-10-30 saat 14.36.13_c67505e1.jpg",
   "/images/WhatsApp Görsel 2025-10-30 saat 14.36.53_fb63f7e2.jpg",
   "/images/WhatsApp Görsel 2025-10-30 saat 14.36.54_48bcc760.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 15.17.29_6197b39a.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 15.18.34_2d48427f.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 16.05.14_f3395ad9.jpg",
 ];
 
 export default function Hero() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [emblaRef] = useEmblaCarousel(
     { 
       loop: true,
@@ -224,14 +229,15 @@ export default function Hero() {
                     {productImages.map((image, index) => (
                       <div
                         key={index}
-                        className="relative min-w-0 flex-[0_0_100%]"
+                        onClick={() => setSelectedImage(image)}
+                        className="relative min-w-0 flex-[0_0_100%] cursor-pointer"
                       >
                         <div className="relative aspect-[3/4]">
                           <Image
                             src={image}
                             alt={`Celvo Premium Tekstil Ürünü ${index + 1}`}
                             fill
-                            className="object-cover"
+                            className="object-cover transition-transform duration-500 hover:scale-105"
                             priority={index === 0}
                             sizes="(max-width: 768px) 100vw, 50vw"
                           />
@@ -293,6 +299,50 @@ export default function Hero() {
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 backdrop-blur-md"
+          >
+            {/* Close Button */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              onClick={() => setSelectedImage(null)}
+              className="absolute right-4 top-4 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-black/80 text-white backdrop-blur-sm transition-all hover:border-[#d4af37]/50 hover:bg-black/90"
+            >
+              <X className="h-6 w-6" />
+            </motion.button>
+
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-h-[90vh] max-w-4xl"
+            >
+              <div className="relative h-full w-full overflow-hidden rounded-2xl border border-[#d4af37]/30 shadow-2xl shadow-[#d4af37]/20">
+                <Image
+                  src={selectedImage}
+                  alt="Celvo Product"
+                  width={1200}
+                  height={1600}
+                  className="h-auto w-auto max-h-[90vh] object-contain"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

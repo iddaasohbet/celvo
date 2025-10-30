@@ -78,20 +78,6 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA Button - Desktop */}
-        <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href="/koleksiyon"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#d4af37] to-[#f0d882] px-6 py-2.5 text-sm font-semibold text-black shadow-lg shadow-[#d4af37]/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#d4af37]/50"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              Alışverişe Başla
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </span>
-            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#f0d882] to-[#d4af37] opacity-0 transition-opacity group-hover:opacity-100" />
-          </Link>
-        </div>
-
         {/* Mobile Menu Button */}
         <button
           className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10 md:hidden"
@@ -166,23 +152,6 @@ export default function Header() {
                     </motion.div>
                   ))}
                 </nav>
-
-                {/* Mobile CTA */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="mt-6 border-t border-white/10 pt-6"
-                >
-                  <Link
-                    href="/koleksiyon"
-                    className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#d4af37] to-[#f0d882] px-6 py-4 text-base font-semibold text-black shadow-lg shadow-[#d4af37]/50"
-                    onClick={() => setOpen(false)}
-                  >
-                    Alışverişe Başla
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
-                </motion.div>
               </div>
             </motion.div>
           </>
