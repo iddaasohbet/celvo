@@ -1,18 +1,16 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hakkımızda - Web Tasarım & SEO Ajansı İstanbul | CihatSoft",
+  title: "Hakkımızda - CÉLVO | Sessizce Yüksel",
   description:
-    "CihatSoft web tasarım ve SEO ajansı hakkında. Profesyonel ekibimiz, misyonumuz ve vizyonumuz. İstanbul'da web tasarım, SEO ve dijital pazarlama hizmetleri.",
-  openGraph: {
-    title: "Hakkımızda - CihatSoft Web Tasarım & SEO",
-    description: "Premium web tasarım ve SEO ajansı. Deneyimli ekibimiz ve başarılı projelerimiz.",
-    url: "https://cihatsoft.com/hakkimizda",
-  },
-  alternates: {
-    canonical: "https://cihatsoft.com/hakkimizda",
-  },
+    "CÉLVO - Köklerden zirveye başarıya giden sessiz güç. Gizli güç, lüks sadelik ve derin öz güvenle hareket eden premium tekstil markası.",
+  keywords: [
+    "célvo",
+    "hakkımızda",
+    "marka hikayesi",
+    "premium tekstil",
+    "rise in silence",
+    "sessizce yüksel",
+    "lüks sadelik",
+  ],
 };
-
-
-

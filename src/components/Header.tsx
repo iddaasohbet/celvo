@@ -3,27 +3,19 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ArrowRight, Sparkles } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const navItems = [
   { href: "/", label: "Ana Sayfa" },
-  { 
-    href: "/#hizmetler", 
-    label: "Hizmetler",
-    dropdown: [
-      { label: "Web Geliştirme", href: "/hizmetler/web-gelistirme" },
-      { label: "UI/UX Tasarım", href: "/hizmetler/ui-ux-tasarim" },
-      { label: "SEO & Pazarlama", href: "/hizmetler/seo-pazarlama" },
-    ]
-  },
-  { href: "/projeler", label: "Projeler" },
+  { href: "/koleksiyon", label: "Koleksiyon" },
   { href: "/hakkimizda", label: "Hakkımızda" },
+  { href: "/iletisim", label: "İletişim" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,88 +48,44 @@ export default function Header() {
 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="group relative z-50 flex items-center gap-3">
+        <Link href="/" className="group relative z-50">
           <motion.div
-            whileHover={{ rotate: 180, scale: 1.1 }}
-            transition={{ duration: 0.6 }}
-            className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#d4af37] to-[#f0d882] p-0.5"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            className="relative h-16 w-16 overflow-hidden rounded-2xl border-2 border-[#d4af37]/40 shadow-lg shadow-[#d4af37]/30 transition-all group-hover:border-[#d4af37]/60 group-hover:shadow-xl group-hover:shadow-[#d4af37]/40"
           >
-            <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-black">
-              <Sparkles className="h-5 w-5 text-[#d4af37]" />
-            </div>
+            <Image
+              src="/logo.jpg"
+              alt="Celvo"
+              fill
+              className="object-cover"
+              priority
+            />
           </motion.div>
-          <div>
-            <span className="block text-xl font-bold tracking-tight text-white transition-all group-hover:text-[#d4af37]">
-              Dijital Website
-            </span>
-            <span className="block text-[10px] uppercase tracking-widest text-gray-500">
-              Digital Agency
-            </span>
-          </div>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
-            <div
+            <Link
               key={item.href}
-              className="relative"
-              onMouseEnter={() => item.dropdown && setActiveDropdown(item.label)}
-              onMouseLeave={() => setActiveDropdown(null)}
+              href={item.href}
+              className="group relative flex items-center gap-1 rounded-xl px-4 py-2 text-sm font-medium text-gray-300 transition-all hover:text-white"
             >
-              <Link
-                href={item.href}
-                className="group relative flex items-center gap-1 rounded-xl px-4 py-2 text-sm font-medium text-gray-300 transition-all hover:text-white"
-              >
-                <span>{item.label}</span>
-                {item.dropdown && (
-                  <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
-                )}
-                <span className="absolute inset-0 -z-10 rounded-xl bg-white/5 opacity-0 transition-opacity group-hover:opacity-100" />
-              </Link>
-
-              {/* Dropdown Menu */}
-              {item.dropdown && (
-                <AnimatePresence>
-                  {activeDropdown === item.label && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full mt-2 w-56 overflow-hidden rounded-2xl border border-white/10 bg-black/95 shadow-2xl backdrop-blur-xl"
-                    >
-                      <div className="p-2">
-                        {item.dropdown.map((subItem, i) => (
-                          <motion.a
-                            key={subItem.href}
-                            href={subItem.href}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: i * 0.05 }}
-                            className="group flex items-center justify-between rounded-xl px-4 py-3 text-sm text-gray-300 transition-all hover:bg-white/5 hover:text-white"
-                          >
-                            <span>{subItem.label}</span>
-                            <ArrowRight className="h-3 w-3 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
-                          </motion.a>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              )}
-            </div>
+              <span>{item.label}</span>
+              <span className="absolute inset-0 -z-10 rounded-xl bg-white/5 opacity-0 transition-opacity group-hover:opacity-100" />
+            </Link>
           ))}
         </nav>
 
         {/* CTA Button - Desktop */}
         <div className="hidden items-center gap-3 md:flex">
           <Link
-            href="/teklif-al"
+            href="/koleksiyon"
             className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#d4af37] to-[#f0d882] px-6 py-2.5 text-sm font-semibold text-black shadow-lg shadow-[#d4af37]/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#d4af37]/50"
           >
             <span className="relative z-10 flex items-center gap-2">
-              Teklif Al
+              Alışverişe Başla
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
             <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#f0d882] to-[#d4af37] opacity-0 transition-opacity group-hover:opacity-100" />
@@ -215,22 +163,6 @@ export default function Header() {
                         <span>{item.label}</span>
                         <ArrowRight className="h-4 w-4 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
                       </Link>
-
-                      {/* Mobile Dropdown */}
-                      {item.dropdown && (
-                        <div className="ml-4 mt-2 space-y-1">
-                          {item.dropdown.map((subItem) => (
-                            <a
-                              key={subItem.href}
-                              href={subItem.href}
-                              className="block rounded-xl px-4 py-2 text-sm text-gray-400 transition-all hover:bg-white/5 hover:text-white"
-                              onClick={() => setOpen(false)}
-                            >
-                              {subItem.label}
-                            </a>
-                          ))}
-                        </div>
-                      )}
                     </motion.div>
                   ))}
                 </nav>
@@ -240,14 +172,14 @@ export default function Header() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="mt-6 pt-6 border-t border-white/10"
+                  className="mt-6 border-t border-white/10 pt-6"
                 >
                   <Link
-                    href="/teklif-al"
+                    href="/koleksiyon"
                     className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#d4af37] to-[#f0d882] px-6 py-4 text-base font-semibold text-black shadow-lg shadow-[#d4af37]/50"
                     onClick={() => setOpen(false)}
                   >
-                    Ücretsiz Teklif Alın
+                    Alışverişe Başla
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                 </motion.div>
@@ -259,5 +191,3 @@ export default function Header() {
     </motion.header>
   );
 }
-
-

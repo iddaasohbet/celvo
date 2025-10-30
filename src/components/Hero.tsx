@@ -1,18 +1,43 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, ShoppingBag, Star } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+
+const productImages = [
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.11_c25d46bb.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.11_fed79ce4.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_042327b0.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_18b6ed9b.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_a0a2c8d5.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_bae398a8.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.13_4fb3ef11.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.13_a8cb2186.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.13_c67505e1.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.53_fb63f7e2.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 14.36.54_48bcc760.jpg",
+];
 
 export default function Hero() {
+  const [emblaRef] = useEmblaCarousel(
+    { 
+      loop: true,
+      align: "center",
+    },
+    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+  );
+
   return (
-    <section
-      id="anasayfa"
-      className="relative isolate min-h-screen overflow-hidden bg-black pt-20"
-    >
-      {/* Animated gradient background */}
+    <section className="relative min-h-screen overflow-hidden bg-black pt-20">
+      {/* Premium Background Effects */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
+        {/* Main gradient overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#d4af37]/20 via-black to-black" />
+        
+        {/* Animated golden orbs */}
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -23,7 +48,7 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute -left-1/4 top-0 h-[600px] w-[600px] rounded-full bg-gradient-to-r from-[#d4af37]/30 to-purple-600/30 blur-[120px]"
+          className="absolute left-1/4 top-1/4 h-[600px] w-[600px] rounded-full bg-[#d4af37]/20 blur-[120px]"
         />
         <motion.div
           animate={{
@@ -34,155 +59,238 @@ export default function Hero() {
             duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1,
           }}
-          className="absolute -right-1/4 top-1/4 h-[600px] w-[600px] rounded-full bg-gradient-to-l from-blue-600/20 to-[#d4af37]/20 blur-[120px]"
+          className="absolute bottom-1/4 right-1/4 h-[500px] w-[500px] rounded-full bg-[#d4af37]/15 blur-[100px]"
         />
+
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
 
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]" />
-
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 py-20 text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#d4af37]/30 bg-gradient-to-r from-[#d4af37]/10 to-purple-600/10 px-6 py-2 text-sm font-medium text-[#d4af37] backdrop-blur-sm"
-        >
-          <Sparkles className="h-4 w-4" />
-          <span>Premium Yazılım & Tasarım Ajansı</span>
-        </motion.div>
-
-        {/* Main heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6 max-w-5xl text-5xl font-bold leading-[1.1] tracking-tight text-white md:text-7xl lg:text-8xl"
-        >
-          Markanızı Dijital{" "}
-          <span className="relative inline-block">
-            <span className="bg-gradient-to-r from-[#d4af37] via-[#f0d882] to-[#d4af37] bg-clip-text text-transparent">
-              Dünyada
-            </span>
-            <motion.span
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="absolute -bottom-2 left-0 h-1 w-full origin-left bg-gradient-to-r from-[#d4af37] to-transparent"
-            />
-          </span>{" "}
-          Öne Çıkarın
-        </motion.h1>
-
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-12 max-w-3xl text-lg leading-relaxed text-gray-300 md:text-xl"
-        >
-          Next.js, React, Three.js ile{" "}
-          <span className="font-semibold text-white">
-            modern, hızlı ve SEO uyumlu
-          </span>{" "}
-          web siteleri tasarlıyoruz. Kurumsal kimliğinizi dijital dünyaya
-          taşıyın.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-4"
-        >
-          <Link
-            href="/teklif-al"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#d4af37] to-[#f0d882] px-8 py-4 text-base font-semibold text-black shadow-lg shadow-[#d4af37]/50 transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#d4af37]/60"
+      <div className="relative mx-auto max-w-7xl px-6 py-32 sm:py-40">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          {/* Left Column - Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative z-10"
           >
-            <span className="relative z-10 flex items-center gap-2">
-              Ücretsiz Teklif Alın
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </span>
-          </Link>
-          <Link
-            href="#hizmetler"
-            className="group rounded-full border-2 border-white/20 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
-          >
-            <span className="flex items-center gap-2">
-              Projelerimizi İnceleyin
-            </span>
-          </Link>
-        </motion.div>
+            {/* Premium Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10 px-6 py-2 backdrop-blur-sm"
+            >
+              <Sparkles className="h-4 w-4 text-[#d4af37]" />
+              <span className="text-sm font-medium text-[#d4af37]">
+                Premium Tekstil Koleksiyonu
+              </span>
+            </motion.div>
 
-        {/* Floating elements */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <motion.div
-            animate={{
-              y: [0, -20, 0],
-              rotate: [0, 5, 0],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute left-[10%] top-[20%] h-32 w-32 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm"
-          />
-          <motion.div
-            animate={{
-              y: [0, 20, 0],
-              rotate: [0, -5, 0],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-            className="absolute right-[15%] top-[30%] h-24 w-24 rounded-full border border-[#d4af37]/20 bg-gradient-to-br from-[#d4af37]/10 to-transparent backdrop-blur-sm"
-          />
-          <motion.div
-            animate={{
-              y: [0, -15, 0],
-              rotate: [0, 10, 0],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2,
-            }}
-            className="absolute bottom-[20%] left-[20%] h-20 w-20 rounded-xl border border-purple-500/20 bg-gradient-to-br from-purple-500/10 to-transparent backdrop-blur-sm"
-          />
-        </div>
+            {/* Main Heading */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="mb-6 text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl"
+            >
+              Lüks ve{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 bg-gradient-to-r from-[#d4af37] to-[#f0d882] bg-clip-text text-transparent">
+                  Zarafet
+                </span>
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                  className="absolute bottom-2 left-0 h-3 w-full bg-gradient-to-r from-[#d4af37]/30 to-[#f0d882]/30"
+                />
+              </span>
+              <br />
+              Evinizde
+            </motion.h1>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="flex flex-col items-center gap-2 text-gray-400"
-          >
-            <span className="text-xs uppercase tracking-wider">Keşfet</span>
-            <div className="h-12 w-[2px] bg-gradient-to-b from-gray-400 to-transparent" />
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="mb-8 max-w-lg text-lg leading-relaxed text-gray-300 sm:text-xl"
+            >
+              Celvo ile yaşam alanlarınızı premium tekstil ürünleriyle dönüştürün.
+              En kaliteli kumaşlar, zarif tasarımlar ve kusursuz işçilik.
+            </motion.p>
+
+            {/* Features */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="mb-10 grid grid-cols-3 gap-4"
+            >
+              {[
+                { icon: Star, text: "Premium Kalite" },
+                { icon: Sparkles, text: "Şık Tasarım" },
+                { icon: ShoppingBag, text: "Hızlı Teslimat" },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -5 }}
+                  className="flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all hover:border-[#d4af37]/30 hover:bg-white/10"
+                >
+                  <item.icon className="h-6 w-6 text-[#d4af37]" />
+                  <span className="text-xs font-medium text-gray-300">
+                    {item.text}
+                  </span>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex flex-wrap gap-4"
+            >
+              <Link
+                href="/koleksiyon"
+                className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#d4af37] to-[#f0d882] px-8 py-4 text-base font-semibold text-black shadow-2xl shadow-[#d4af37]/50 transition-all hover:scale-105 hover:shadow-[#d4af37]/70"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Koleksiyonu Keşfet
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </span>
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#f0d882] to-[#d4af37] opacity-0 transition-opacity group-hover:opacity-100" />
+              </Link>
+
+              <Link
+                href="/hakkimizda"
+                className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-[#d4af37]/50 hover:bg-white/10"
+              >
+                Hakkımızda
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="mt-12 flex items-center gap-8 border-t border-white/10 pt-8"
+            >
+              <div>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-[#d4af37] text-[#d4af37]"
+                    />
+                  ))}
+                </div>
+                <p className="mt-2 text-sm text-gray-400">
+                  <span className="font-semibold text-white">1000+</span> Mutlu Müşteri
+                </p>
+              </div>
+              <div className="h-12 w-px bg-white/10" />
+              <div>
+                <p className="text-2xl font-bold text-white">%100</p>
+                <p className="text-sm text-gray-400">Kalite Garantisi</p>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          {/* Right Column - Visual */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            {/* Main Image Container */}
+            <div className="relative">
+              {/* Glow effect behind image */}
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#d4af37]/30 to-[#f0d882]/30 blur-3xl" />
+              
+              {/* Image carousel with premium border */}
+              <div className="relative overflow-hidden rounded-3xl border border-[#d4af37]/30 bg-gradient-to-br from-white/5 to-white/10 p-2 backdrop-blur-sm">
+                <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+                  <div className="flex">
+                    {productImages.map((image, index) => (
+                      <div
+                        key={index}
+                        className="relative min-w-0 flex-[0_0_100%]"
+                      >
+                        <div className="relative aspect-[3/4]">
+                          <Image
+                            src={image}
+                            alt={`Celvo Premium Tekstil Ürünü ${index + 1}`}
+                            fill
+                            className="object-cover"
+                            priority={index === 0}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                          {/* Gradient overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Floating badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1, duration: 0.6 }}
+                  className="absolute bottom-6 left-6 right-6 z-10"
+                >
+                  <div className="rounded-2xl border border-white/20 bg-black/80 p-4 backdrop-blur-xl">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-xs text-gray-400">Yeni Koleksiyon</p>
+                        <p className="text-lg font-bold text-white">2025 Premium</p>
+                      </div>
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#d4af37] to-[#f0d882]">
+                        <ShoppingBag className="h-6 w-6 text-black" />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Floating quality badge */}
+              <motion.div
+                animate={{
+                  y: [0, -20, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute -right-4 -top-4 rounded-2xl border border-[#d4af37]/30 bg-black/90 p-4 backdrop-blur-xl"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#d4af37] to-[#f0d882]">
+                    <Star className="h-5 w-5 fill-black text-black" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400">Premium</p>
+                    <p className="text-sm font-bold text-white">Kalite</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
     </section>
   );
 }
-
-

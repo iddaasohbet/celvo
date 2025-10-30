@@ -11,66 +11,58 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "Web Tasarım & SEO Hizmetleri İstanbul | Dijital Website - Profesyonel Web Sitesi Tasarımı",
-    template: "%s | Dijital Website - Web Tasarım & SEO Ajansı",
+    default: "Celvo - Premium Tekstil Ürünleri | Şık ve Kaliteli Ev Tekstili",
+    template: "%s | Celvo",
   },
   description:
-    "İstanbul'da web tasarım ve SEO hizmetleri. Profesyonel web sitesi tasarımı, kurumsal web tasarım, e-ticaret, mobil uyumlu web tasarım ve Google SEO optimizasyonu. Uygun fiyatlı web tasarım paketleri.",
+    "Celvo ile yaşam alanlarınızı premium tekstil ürünleriyle süsleyin. Kaliteli kumaşlar, şık tasarımlar ve modern ev tekstili ürünleri.",
   keywords: [
-    "web tasarım",
-    "web tasarım istanbul",
-    "web sitesi tasarımı",
-    "kurumsal web tasarım",
-    "seo hizmetleri",
-    "seo uzmanı",
-    "google seo",
-    "web tasarım ajansı",
-    "web tasarım fiyatları",
-    "e-ticaret sitesi",
-    "mobil uyumlu web tasarım",
-    "responsive web tasarım",
-    "web tasarım firması",
-    "web yazılım",
-    "dijital pazarlama",
-    "web tasarım şirketi",
-    "profesyonel web tasarım",
-    "uygun web tasarım",
-    "seo optimizasyonu",
-    "arama motoru optimizasyonu",
+    "celvo",
+    "tekstil",
+    "ev tekstili",
+    "premium tekstil",
+    "kaliteli kumaş",
+    "şık tasarım",
+    "ev dekorasyonu",
+    "tekstil ürünleri",
+    "modern tekstil",
   ],
-  metadataBase: new URL("https://dijitalwebsite.com"),
-  authors: [{ name: "Dijital Website Web Tasarım & SEO Ajansı" }],
-  creator: "Dijital Website",
-  publisher: "Dijital Website",
+  metadataBase: new URL("http://celvo.com.tr"),
+  authors: [{ name: "Yusuf Tutar - Celvo Tekstil" }],
+  creator: "Celvo - Yusuf Tutar",
+  publisher: "Celvo",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
   openGraph: {
-    title: "Web Tasarım & SEO Hizmetleri İstanbul | Dijital Website",
+    title: "Celvo - Premium Tekstil Ürünleri",
     description:
-      "Profesyonel web tasarım, SEO hizmetleri ve dijital pazarlama çözümleri. Modern, hızlı ve Google dostu web siteleri. Kurumsal web tasarım, e-ticaret ve mobil uyumlu tasarım.",
+      "Kaliteli ve şık tekstil ürünleriyle yaşam alanlarınıza değer katın.",
     type: "website",
     locale: "tr_TR",
-    url: "https://dijitalwebsite.com",
-    siteName: "Dijital Website Web Tasarım & SEO",
+    url: "http://celvo.com.tr",
+    siteName: "Celvo",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo.jpg",
         width: 1200,
         height: 630,
-        alt: "Dijital Website - Web Tasarım & SEO Hizmetleri",
+        alt: "Celvo - Premium Tekstil",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Tasarım & SEO Hizmetleri İstanbul | Dijital Website",
+    title: "Celvo - Premium Tekstil Ürünleri",
     description:
-      "Profesyonel web tasarım ve SEO hizmetleri. Modern, hızlı ve Google dostu web siteleri.",
-    images: ["/og-image.jpg"],
-    creator: "@dijitalwebsite",
+      "Kaliteli ve şık tekstil ürünleriyle yaşam alanlarınıza değer katın.",
+    images: ["/logo.jpg"],
   },
   robots: {
     index: true,
@@ -84,10 +76,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://dijitalwebsite.com",
-  },
-  verification: {
-    google: "dn_Bg0jpfYeHAf-TZ3WBfugfxrXOBa9t_wYtnLTmwvg",
+    canonical: "http://celvo.com.tr",
   },
 };
 
@@ -104,5 +93,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-

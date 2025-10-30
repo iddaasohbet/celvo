@@ -1,8 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Portfolio from "@/components/Portfolio";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
 import Script from "next/script";
@@ -13,117 +10,57 @@ export default function Home() {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://dijitalwebsite.com/#website",
-        url: "https://dijitalwebsite.com",
-        name: "Dijital Website Web Tasarım & SEO",
-        description: "Profesyonel web tasarım ve SEO hizmetleri İstanbul",
+        "@id": "http://celvo.com.tr/#website",
+        url: "http://celvo.com.tr",
+        name: "Celvo - Premium Tekstil Ürünleri",
+        description: "Celvo kaliteli ve şık tekstil ürünleriyle yaşam alanlarınıza değer katıyor",
         publisher: {
-          "@id": "https://dijitalwebsite.com/#organization",
+          "@id": "http://celvo.com.tr/#organization",
         },
         inLanguage: "tr-TR",
       },
       {
         "@type": "Organization",
-        "@id": "https://dijitalwebsite.com/#organization",
-        name: "Dijital Website Web Tasarım & SEO Ajansı",
-        url: "https://dijitalwebsite.com",
+        "@id": "http://celvo.com.tr/#organization",
+        name: "Celvo Tekstil",
+        url: "http://celvo.com.tr",
         logo: {
           "@type": "ImageObject",
-          url: "https://dijitalwebsite.com/logo.png",
+          url: "http://celvo.com.tr/logo.jpg",
         },
-        description: "İstanbul'da profesyonel web tasarım, SEO ve dijital pazarlama hizmetleri",
+        description: "Premium tekstil ürünleri ve şık ev tekstili",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "İstanbul",
+          addressLocality: "Şehitkamil",
+          addressRegion: "Gaziantep",
           addressCountry: "TR",
         },
         contactPoint: {
           "@type": "ContactPoint",
-          telephone: "+90-532-166-76-97",
+          telephone: "+90-506-700-08-27",
           contactType: "customer service",
-          email: "hello@dijitalwebsite.com",
+          email: "info@celvo.com.tr",
           areaServed: "TR",
-          availableLanguage: ["Turkish", "English"],
+          availableLanguage: ["Turkish"],
         },
-        sameAs: [
-          "https://twitter.com/dijitalwebsite",
-          "https://linkedin.com/company/dijitalwebsite",
-          "https://github.com/dijitalwebsite",
-        ],
+        founder: {
+          "@type": "Person",
+          name: "Yusuf Tutar",
+        },
       },
       {
         "@type": "WebPage",
-        "@id": "https://dijitalwebsite.com/#webpage",
-        url: "https://dijitalwebsite.com",
-        name: "Web Tasarım & SEO Hizmetleri İstanbul | Dijital Website",
+        "@id": "http://celvo.com.tr/#webpage",
+        url: "http://celvo.com.tr",
+        name: "Celvo - Premium Tekstil Ürünleri",
         isPartOf: {
-          "@id": "https://dijitalwebsite.com/#website",
+          "@id": "http://celvo.com.tr/#website",
         },
         about: {
-          "@id": "https://dijitalwebsite.com/#organization",
+          "@id": "http://celvo.com.tr/#organization",
         },
-        description: "İstanbul'da web tasarım ve SEO hizmetleri. Profesyonel web sitesi tasarımı, kurumsal web tasarım, e-ticaret ve mobil uyumlu web tasarım.",
+        description: "Kaliteli tekstil ürünleri, ev tekstili ve şık tasarımlar",
         inLanguage: "tr-TR",
-      },
-      {
-        "@type": "Service",
-        serviceType: "Web Tasarım Hizmetleri",
-        provider: {
-          "@id": "https://dijitalwebsite.com/#organization",
-        },
-        areaServed: {
-          "@type": "Country",
-          name: "Turkey",
-        },
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Web Tasarım & SEO Hizmetleri",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Kurumsal Web Tasarım",
-                description: "Profesyonel kurumsal web sitesi tasarımı ve geliştirme",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "SEO Hizmetleri",
-                description: "Google SEO optimizasyonu ve arama motoru sıralaması",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "E-Ticaret Web Sitesi",
-                description: "Online satış için e-ticaret web sitesi tasarımı",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Mobil Uyumlu Web Tasarım",
-                description: "Responsive ve mobil uyumlu web sitesi tasarımı",
-              },
-            },
-          ],
-        },
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Ana Sayfa",
-            item: "https://dijitalwebsite.com",
-          },
-        ],
       },
     ],
   };
@@ -139,9 +76,6 @@ export default function Home() {
         <Header />
         <main>
           <Hero />
-          <Services />
-          <Portfolio />
-          <Testimonials />
         </main>
         <Footer />
         <FloatingContact />
@@ -149,5 +83,3 @@ export default function Home() {
     </>
   );
 }
-
-

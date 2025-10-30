@@ -2,216 +2,148 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Twitter, Linkedin, Github, Instagram, Mail, Phone, MapPin, Sparkles } from "lucide-react";
-
-const navigation = {
-  company: [
-    { name: "Ana Sayfa", href: "/" },
-    { name: "Hakkımızda", href: "/hakkimizda" },
-    { name: "Projeler", href: "/projeler" },
-    { name: "Blog", href: "#blog" },
-  ],
-  services: [
-    { name: "Web Geliştirme", href: "/hizmetler/web-gelistirme" },
-    { name: "UI/UX Tasarım", href: "/hizmetler/ui-ux-tasarim" },
-    { name: "E-Ticaret", href: "/hizmetler/e-ticaret" },
-    { name: "SEO & Pazarlama", href: "/hizmetler/seo-pazarlama" },
-  ],
-  resources: [
-    { name: "Dökümanlar", href: "#" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "Destek", href: "#" },
-    { name: "Kariyer", href: "#" },
-  ],
-};
-
-const socialLinks = [
-  { name: "Twitter", icon: Twitter, href: "#", color: "hover:text-blue-400" },
-  { name: "LinkedIn", icon: Linkedin, href: "#", color: "hover:text-blue-600" },
-  { name: "GitHub", icon: Github, href: "#", color: "hover:text-gray-400" },
-  { name: "Instagram", icon: Instagram, href: "#", color: "hover:text-pink-600" },
-];
+import { Instagram, Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-black">
       {/* Premium background effects */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/10 via-black to-black" />
-        <div className="absolute left-1/4 top-0 h-[500px] w-[500px] rounded-full bg-[#d4af37]/10 blur-[200px]" />
-        <div className="absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-purple-600/10 blur-[200px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#d4af37]/10 via-black to-black" />
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d4af37]/5 blur-[200px]" />
       </div>
 
       {/* Top gradient line */}
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-[#d4af37]/50 to-transparent" />
 
       {/* Main content */}
-      <div className="mx-auto max-w-7xl px-6 pt-20 pb-12">
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
-          {/* Brand Column */}
-          <div className="lg:col-span-4">
-            <Link href="/" className="group mb-6 inline-flex items-center gap-3">
-              <motion.div
-                whileHover={{ rotate: 180, scale: 1.1 }}
-                transition={{ duration: 0.6 }}
-                className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#d4af37] to-[#f0d882] p-0.5"
-              >
-                <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-black">
-                  <Sparkles className="h-5 w-5 text-[#d4af37]" />
-                </div>
-              </motion.div>
-              <div>
-                <span className="block text-xl font-bold tracking-tight text-white transition-all group-hover:text-[#d4af37]">
-                  Dijital Website
-                </span>
-                <span className="block text-[10px] uppercase tracking-widest text-gray-500">
-                  Digital Agency
-                </span>
-              </div>
-            </Link>
+      <div className="mx-auto max-w-5xl px-6 py-20">
+        {/* Logo and Slogan */}
+        <div className="mb-16 text-center">
+          <Link href="/" className="group mb-6 inline-block">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="relative mx-auto h-24 w-24 overflow-hidden rounded-2xl border-2 border-[#d4af37]/40 shadow-lg shadow-[#d4af37]/30 transition-all group-hover:border-[#d4af37]/60 group-hover:shadow-xl group-hover:shadow-[#d4af37]/40"
+            >
+              <Image
+                src="/logo.jpg"
+                alt="Celvo"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </Link>
 
-            <p className="mb-8 max-w-sm text-base leading-relaxed text-gray-400">
-              Premium dijital çözümler sunan yazılım ajansı. Modern teknolojilerle markanızı dijital dünyada zirveye taşıyoruz.
-            </p>
-
-            {/* Social Links */}
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map(({ name, icon: Icon, href, color }) => (
-                <motion.a
-                  key={name}
-                  href={href}
-                  whileHover={{ scale: 1.1, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`group relative flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gray-400 backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/10 ${color}`}
-                >
-                  <Icon className="h-5 w-5" />
-                </motion.a>
-              ))}
-            </div>
-          </div>
-
-          {/* Navigation Columns */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-5">
-            <div>
-              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
-                Şirket
-              </h3>
-              <ul className="space-y-4">
-                {navigation.company.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="group flex items-center gap-2 text-sm text-gray-400 transition-all hover:translate-x-1 hover:text-white"
-                    >
-                      <span className="h-px w-0 bg-[#d4af37] transition-all group-hover:w-4" />
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
-                Hizmetler
-              </h3>
-              <ul className="space-y-4">
-                {navigation.services.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="group flex items-center gap-2 text-sm text-gray-400 transition-all hover:translate-x-1 hover:text-white"
-                    >
-                      <span className="h-px w-0 bg-[#d4af37] transition-all group-hover:w-4" />
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
-                Kaynaklar
-              </h3>
-              <ul className="space-y-4">
-                {navigation.resources.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="group flex items-center gap-2 text-sm text-gray-400 transition-all hover:translate-x-1 hover:text-white"
-                    >
-                      <span className="h-px w-0 bg-[#d4af37] transition-all group-hover:w-4" />
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Contact Info */}
-          <div className="lg:col-span-3">
-            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
-              İletişim
-            </h3>
-            <div className="space-y-4">
-              <motion.a
-                href="mailto:hello@dijitalwebsite.com"
-                whileHover={{ x: 5 }}
-                className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-[#d4af37]/50 hover:bg-white/10"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#d4af37]/20 to-transparent">
-                  <Mail className="h-5 w-5 text-[#d4af37]" />
-                </div>
-                <div>
-                  <div className="text-xs text-gray-500">Email</div>
-                  <div className="text-sm font-medium text-white">hello@dijitalwebsite.com</div>
-                </div>
-              </motion.a>
-
-              <motion.a
-                href="tel:+905321667697"
-                whileHover={{ x: 5 }}
-                className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-[#d4af37]/50 hover:bg-white/10"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#d4af37]/20 to-transparent">
-                  <Phone className="h-5 w-5 text-[#d4af37]" />
-                </div>
-                <div>
-                  <div className="text-xs text-gray-500">Telefon</div>
-                  <div className="text-sm font-medium text-white">+90 532 166 76 97</div>
-                </div>
-              </motion.a>
-
-              <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#d4af37]/20 to-transparent">
-                  <MapPin className="h-5 w-5 text-[#d4af37]" />
-                </div>
-                <div>
-                  <div className="text-xs text-gray-500">Adres</div>
-                  <div className="text-sm font-medium text-white">İstanbul, Türkiye</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h3 className="mb-3 text-2xl font-bold text-white">CÉLVO</h3>
+          <p className="mb-6 text-lg italic text-[#d4af37]">
+            "Rise in Silence."
+          </p>
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-400">
+            Premium tekstil ürünleriyle yaşam alanlarınıza lüks ve zarafet katın.
+            Sessizce yükselen gücün manifestosu.
+          </p>
         </div>
 
+        {/* Contact & Social Grid */}
+        <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Phone */}
+          <motion.a
+            href="tel:+905067000827"
+            whileHover={{ y: -4 }}
+            className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/60 px-6 py-8 text-center backdrop-blur-sm transition-all duration-300 hover:border-[#d4af37]/40 hover:bg-black/80"
+          >
+            <div className="mb-5 flex items-center justify-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-[#d4af37]/10 transition-colors duration-300 group-hover:bg-[#d4af37]/15">
+                <Phone className="h-7 w-7 text-[#d4af37]" strokeWidth={1.5} />
+              </div>
+            </div>
+            <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.15em] text-gray-500">
+              TELEFON
+            </p>
+            <p className="text-base font-semibold text-white">0506 700 08 27</p>
+          </motion.a>
+
+          {/* Email */}
+          <motion.a
+            href="mailto:info@celvo.com.tr"
+            whileHover={{ y: -4 }}
+            className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/60 px-6 py-8 text-center backdrop-blur-sm transition-all duration-300 hover:border-[#d4af37]/40 hover:bg-black/80"
+          >
+            <div className="mb-5 flex items-center justify-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-[#d4af37]/10 transition-colors duration-300 group-hover:bg-[#d4af37]/15">
+                <Mail className="h-7 w-7 text-[#d4af37]" strokeWidth={1.5} />
+              </div>
+            </div>
+            <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.15em] text-gray-500">
+              E-POSTA
+            </p>
+            <p className="text-base font-semibold text-white">info@celvo.com.tr</p>
+          </motion.a>
+
+          {/* Address */}
+          <motion.div
+            whileHover={{ y: -4 }}
+            className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/60 px-6 py-8 text-center backdrop-blur-sm transition-all duration-300 hover:border-[#d4af37]/40 hover:bg-black/80"
+          >
+            <div className="mb-5 flex items-center justify-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-[#d4af37]/10 transition-colors duration-300 group-hover:bg-[#d4af37]/15">
+                <MapPin className="h-7 w-7 text-[#d4af37]" strokeWidth={1.5} />
+              </div>
+            </div>
+            <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.15em] text-gray-500">
+              ADRES
+            </p>
+            <p className="text-base font-semibold text-white">Gaziantep</p>
+          </motion.div>
+
+          {/* Instagram */}
+          <motion.a
+            href="https://www.instagram.com/celvowear/?igsh=bmhtNWpobDJkcG4x&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -4 }}
+            className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/60 px-6 py-8 text-center backdrop-blur-sm transition-all duration-300 hover:border-pink-500/40 hover:bg-black/80"
+          >
+            <div className="mb-5 flex items-center justify-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-pink-500/10 transition-colors duration-300 group-hover:bg-pink-500/15">
+                <Instagram className="h-7 w-7 text-pink-500" strokeWidth={1.5} />
+              </div>
+            </div>
+            <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.15em] text-gray-500">
+              INSTAGRAM
+            </p>
+            <p className="text-base font-semibold text-white">@celvowear</p>
+          </motion.a>
+        </div>
+
+        {/* Divider */}
+        <div className="mb-8 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
         {/* Bottom Bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
+        <div className="space-y-4 text-center">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} <span className="font-semibold text-gray-400">Dijital Website</span>. Tüm hakları saklıdır.
+            © {new Date().getFullYear()}{" "}
+            <span className="font-semibold text-gray-400">CÉLVO</span> - Yusuf Tutar
+            <span className="mx-2">•</span>
+            Tüm hakları saklıdır.
           </p>
-          <div className="flex gap-6 text-xs text-gray-600">
-            <Link href="/gizlilik-politikasi" className="hover:text-gray-400">Gizlilik Politikası</Link>
-            <Link href="/kvkk" className="hover:text-gray-400">KVKK</Link>
-            <Link href="/kullanim-kosullari" className="hover:text-gray-400">Kullanım Koşulları</Link>
+          
+          {/* Developer Credit */}
+          <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
+            <span>Designed & Developed by</span>
+            <a
+              href="https://www.dijitalwebsite.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[#d4af37] transition-colors hover:text-[#f0d882]"
+            >
+              Dijital Website
+            </a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
-
-
