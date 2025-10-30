@@ -142,25 +142,41 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
     if (!confirm("Bu resmi silmek istediğinize emin misiniz?")) return;
 
     setLoading(true);
+    setMessage("");
+    
     try {
-      const response = await fetch("/api/admin/delete-image", {
+      // Delete image file first
+      const deleteRes = await fetch("/api/admin/delete-image", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ imagePath }),
       });
 
-      if (response.ok) {
-        // Remove from products
+      if (deleteRes.ok) {
+        // Remove from products and reindex IDs
+        const filteredProducts = productsData.products.filter((p: any) => p.id !== productId);
+        const reindexedProducts = filteredProducts.map((p: any, index: number) => ({
+          ...p,
+          id: index + 1,
+        }));
+
         const updatedProducts = {
-          products: productsData.products.filter((p: any) => p.id !== productId),
+          products: reindexedProducts,
         };
+
         await saveContent("products", updatedProducts);
-        setMessage("✅ Resim silindi!");
-        loadContent();
-        loadImages();
+        setMessage("✅ Resim başarıyla silindi!");
+        
+        // Reload data
+        await loadContent();
+        await loadImages();
+      } else {
+        const error = await deleteRes.json();
+        setMessage(`❌ Silme hatası: ${error.error || "Bilinmeyen hata"}`);
       }
     } catch (error) {
-      setMessage("❌ Silme hatası");
+      console.error("Delete error:", error);
+      setMessage("❌ Silme işlemi başarısız oldu");
     } finally {
       setLoading(false);
     }
