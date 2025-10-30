@@ -40,37 +40,24 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden bg-black pt-20 sm:pt-24">
       {/* Premium Background Effects */}
       <div className="absolute inset-0 -z-10">
-        {/* Main gradient overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#d4af37]/20 via-black to-black" />
+        {/* Main gradient overlay - subtle */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#d4af37]/5 via-black to-black" />
         
-        {/* Animated golden orbs */}
+        {/* Minimal golden accent - top left only */}
         <motion.div
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.1, 0.15, 0.1],
           }}
           transition={{
             duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute left-1/4 top-1/4 h-[600px] w-[600px] rounded-full bg-[#d4af37]/20 blur-[120px]"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-1/4 right-1/4 h-[500px] w-[500px] rounded-full bg-[#d4af37]/15 blur-[100px]"
+          className="absolute left-0 top-0 h-[400px] w-[400px] rounded-full bg-[#d4af37]/8 blur-[150px]"
         />
 
         {/* Subtle grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-32 lg:py-40">
@@ -220,8 +207,8 @@ export default function Hero() {
           >
             {/* Main Image Container */}
             <div className="relative">
-              {/* Glow effect behind image */}
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#d4af37]/30 to-[#f0d882]/30 blur-3xl" />
+              {/* Minimal glow effect behind image */}
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#d4af37]/10 to-[#f0d882]/10 blur-[80px]" />
               
               {/* Image carousel with premium border */}
               <div className="relative overflow-hidden rounded-3xl border border-[#d4af37]/30 bg-gradient-to-br from-white/5 to-white/10 p-2 backdrop-blur-sm">
