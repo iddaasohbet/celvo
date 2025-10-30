@@ -153,13 +153,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-wrap gap-4"
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:w-auto w-full max-w-md"
             >
               <Link
                 href="/koleksiyon"
                 className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#d4af37] to-[#f0d882] px-8 py-4 text-base font-semibold text-black shadow-2xl shadow-[#d4af37]/50 transition-all hover:scale-105 hover:shadow-[#d4af37]/70"
               >
-                <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
+                <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
                   Koleksiyonu Keşfet
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -170,7 +170,7 @@ export default function Hero() {
                 href="/hakkimizda"
                 className="group relative overflow-hidden rounded-full border border-white/20 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-[#d4af37]/50 hover:bg-white/10"
               >
-                <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
+                <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
                   Hakkımızda
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </span>
