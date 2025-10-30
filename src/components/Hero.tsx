@@ -104,8 +104,22 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               className="mb-6 text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl"
-              dangerouslySetInnerHTML={{ __html: heroData.title.replace("Zarafet", '<span class="relative inline-block"><span class="relative z-10 bg-gradient-to-r from-[#d4af37] to-[#f0d882] bg-clip-text text-transparent">Zarafet</span></span>') }}
-            />
+            >
+              {heroData.title.split(' ').slice(0, 2).join(' ')}{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 bg-gradient-to-r from-[#d4af37] to-[#f0d882] bg-clip-text text-transparent">
+                  {heroData.title.split(' ')[2]}
+                </span>
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                  className="absolute bottom-2 left-0 h-3 w-full bg-gradient-to-r from-[#d4af37]/30 to-[#f0d882]/30"
+                />
+              </span>
+              <br />
+              {heroData.title.split(' ').slice(3).join(' ')}
+            </motion.h1>
 
             {/* Description */}
             <motion.p
