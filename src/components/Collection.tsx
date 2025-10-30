@@ -8,21 +8,16 @@ import { useState, useEffect } from "react";
 export default function Collection() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [products, setProducts] = useState<any[]>([]);
-
-  useEffect(() => {
-    fetch("/api/get-products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data.products))
-      .catch(() => {
-        // Fallback to empty
-        setProducts([]);
-      });
-  }, []);
-
-  if (products.length === 0) {
-    return <div className="min-h-screen bg-black py-32" />;
-  }
+  
+  // Default products - will be replaced with DB later
+  const products = [
+    {
+      id: 1,
+      image: "/images/demo.jpg",
+      name: "Premium Koleksiyon",
+      category: "Tekstil",
+    },
+  ];
 
   return (
     <section className="relative overflow-hidden bg-black py-32">

@@ -14,7 +14,19 @@ const productImages = [
 
 export default function Hero() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [heroData, setHeroData] = useState<any>(null);
+  
+  // Default data - will be replaced with DB later
+  const heroData = {
+    badge: "Premium Tekstil Koleksiyonu",
+    title: "Lüks ve Zarafet Evinizde",
+    description: "Celvo ile yaşam alanlarınızı premium tekstil ürünleriyle dönüştürün. En kaliteli kumaşlar, zarif tasarımlar ve kusursuz işçilik.",
+    trustIndicators: { 
+      customers: "1000+", 
+      customersLabel: "Mutlu Müşteri",
+      quality: "%100",
+      qualityLabel: "Kalite Garantisi"
+    },
+  };
   
   const [emblaRef] = useEmblaCarousel(
     { 
@@ -23,25 +35,6 @@ export default function Hero() {
     },
     [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
-
-  useEffect(() => {
-    fetch("/api/get-hero")
-      .then((res) => res.json())
-      .then((data) => setHeroData(data))
-      .catch(() => {
-        // Fallback to default data
-        setHeroData({
-          badge: "Premium Tekstil Koleksiyonu",
-          title: "Lüks ve Zarafet Evinizde",
-          description: "Celvo ile yaşam alanlarınızı premium tekstil ürünleriyle dönüştürün.",
-          trustIndicators: { customers: "1000+", quality: "%100" },
-        });
-      });
-  }, []);
-
-  if (!heroData) {
-    return <div className="min-h-screen bg-black" />;
-  }
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-black pt-20 sm:pt-24">
