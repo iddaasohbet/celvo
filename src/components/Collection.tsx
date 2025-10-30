@@ -3,86 +3,26 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { X } from "lucide-react";
-import { useState } from "react";
-
-const products = [
-  {
-    id: 1,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 14.36.11_c25d46bb.jpg",
-    name: "Premium Koleksiyon",
-    category: "Tekstil",
-  },
-  {
-    id: 2,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 14.36.11_fed79ce4.jpg",
-    name: "Luxury Serisi",
-    category: "Tekstil",
-  },
-  {
-    id: 3,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_042327b0.jpg",
-    name: "Modern Tasarım",
-    category: "Tekstil",
-  },
-  {
-    id: 4,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_18b6ed9b.jpg",
-    name: "Şık Koleksiyon",
-    category: "Tekstil",
-  },
-  {
-    id: 5,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_a0a2c8d5.jpg",
-    name: "Zarif Serisi",
-    category: "Tekstil",
-  },
-  {
-    id: 6,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 14.36.12_bae398a8.jpg",
-    name: "Klasik Tasarım",
-    category: "Tekstil",
-  },
-  {
-    id: 7,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 14.36.13_4fb3ef11.jpg",
-    name: "Elite Koleksiyon",
-    category: "Tekstil",
-  },
-  {
-    id: 8,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 14.36.13_a8cb2186.jpg",
-    name: "Premium Serisi",
-    category: "Tekstil",
-  },
-  {
-    id: 9,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 15.17.29_6197b39a.jpg",
-    name: "Exclusive Collection",
-    category: "Tekstil",
-  },
-  {
-    id: 10,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 15.18.34_2d48427f.jpg",
-    name: "Royal Serisi",
-    category: "Tekstil",
-  },
-  {
-    id: 11,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 16.05.14_f3395ad9.jpg",
-    name: "Signature Collection",
-    category: "Tekstil",
-  },
-  {
-    id: 12,
-    image: "/images/WhatsApp Görsel 2025-10-30 saat 16.11.58_9e6d5aff.jpg",
-    name: "Prestige Serisi",
-    category: "Tekstil",
-  },
-];
+import { useState, useEffect } from "react";
 
 export default function Collection() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch("/api/get-products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products))
+      .catch(() => {
+        // Fallback to empty
+        setProducts([]);
+      });
+  }, []);
+
+  if (products.length === 0) {
+    return <div className="min-h-screen bg-black py-32" />;
+  }
 
   return (
     <section className="relative overflow-hidden bg-black py-32">

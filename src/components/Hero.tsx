@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const productImages = [
   "/images/WhatsApp Görsel 2025-10-30 saat 14.36.11_c25d46bb.jpg",
@@ -28,6 +28,8 @@ const productImages = [
 
 export default function Hero() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [heroData, setHeroData] = useState<any>(null);
+  
   const [emblaRef] = useEmblaCarousel(
     { 
       loop: true,
@@ -35,6 +37,25 @@ export default function Hero() {
     },
     [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
+
+  useEffect(() => {
+    fetch("/api/get-hero")
+      .then((res) => res.json())
+      .then((data) => setHeroData(data))
+      .catch(() => {
+        // Fallback to default data
+        setHeroData({
+          badge: "Premium Tekstil Koleksiyonu",
+          title: "Lüks ve Zarafet Evinizde",
+          description: "Celvo ile yaşam alanlarınızı premium tekstil ürünleriyle dönüştürün.",
+          trustIndicators: { customers: "1000+", quality: "%100" },
+        });
+      });
+  }, []);
+
+  if (!heroData) {
+    return <div className="min-h-screen bg-black" />;
+  }
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-black pt-20 sm:pt-24">
@@ -78,7 +99,7 @@ export default function Hero() {
             >
               <Sparkles className="h-4 w-4 text-[#d4af37]" />
               <span className="text-sm font-medium text-[#d4af37]">
-                Premium Tekstil Koleksiyonu
+                {heroData.badge}
               </span>
             </motion.div>
 
@@ -88,22 +109,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               className="mb-6 text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl"
-            >
-              Lüks ve{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-[#d4af37] to-[#f0d882] bg-clip-text text-transparent">
-                  Zarafet
-                </span>
-                <motion.span
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 0.8, duration: 0.6 }}
-                  className="absolute bottom-2 left-0 h-3 w-full bg-gradient-to-r from-[#d4af37]/30 to-[#f0d882]/30"
-                />
-              </span>
-              <br />
-              Evinizde
-            </motion.h1>
+              dangerouslySetInnerHTML={{ __html: heroData.title.replace("Zarafet", '<span class="relative inline-block"><span class="relative z-10 bg-gradient-to-r from-[#d4af37] to-[#f0d882] bg-clip-text text-transparent">Zarafet</span></span>') }}
+            />
 
             {/* Description */}
             <motion.p
@@ -112,8 +119,7 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="mb-8 max-w-lg text-lg leading-relaxed text-gray-300 sm:text-xl"
             >
-              Celvo ile yaşam alanlarınızı premium tekstil ürünleriyle dönüştürün.
-              En kaliteli kumaşlar, zarif tasarımlar ve kusursuz işçilik.
+              {heroData.description}
             </motion.p>
 
             {/* Features */}
@@ -187,13 +193,13 @@ export default function Hero() {
                   ))}
                 </div>
                 <p className="mt-2 text-sm text-gray-400">
-                  <span className="font-semibold text-white">1000+</span> Mutlu Müşteri
+                  <span className="font-semibold text-white">{heroData.trustIndicators.customers}</span> {heroData.trustIndicators.customersLabel}
                 </p>
               </div>
               <div className="h-12 w-px bg-white/10" />
               <div>
-                <p className="text-2xl font-bold text-white">%100</p>
-                <p className="text-sm text-gray-400">Kalite Garantisi</p>
+                <p className="text-2xl font-bold text-white">{heroData.trustIndicators.quality}</p>
+                <p className="text-sm text-gray-400">{heroData.trustIndicators.qualityLabel}</p>
               </div>
             </motion.div>
           </motion.div>
