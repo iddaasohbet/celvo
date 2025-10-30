@@ -72,6 +72,12 @@ const products = [
     name: "Signature Collection",
     category: "Tekstil",
   },
+  {
+    id: 12,
+    image: "/images/WhatsApp Görsel 2025-10-30 saat 16.11.58_9e6d5aff.jpg",
+    name: "Prestige Serisi",
+    category: "Tekstil",
+  },
 ];
 
 export default function Collection() {

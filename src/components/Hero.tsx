@@ -23,6 +23,7 @@ const productImages = [
   "/images/WhatsApp Görsel 2025-10-30 saat 15.17.29_6197b39a.jpg",
   "/images/WhatsApp Görsel 2025-10-30 saat 15.18.34_2d48427f.jpg",
   "/images/WhatsApp Görsel 2025-10-30 saat 16.05.14_f3395ad9.jpg",
+  "/images/WhatsApp Görsel 2025-10-30 saat 16.11.58_9e6d5aff.jpg",
 ];
 
 export default function Hero() {
