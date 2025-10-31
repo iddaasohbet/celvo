@@ -32,8 +32,8 @@ export default function Header() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 z-50 w-full transition-all duration-500 ${
         scrolled
-          ? "border-b border-white/10 bg-black/95 py-3 shadow-lg shadow-black/50 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent py-4"
+          ? "border-b border-white/10 bg-black/95 py-2 shadow-lg shadow-black/50 backdrop-blur-xl"
+          : "border-b border-transparent bg-transparent py-3"
       }`}
     >
       {/* Top gradient line - only visible when scrolled */}
@@ -47,36 +47,55 @@ export default function Header() {
       )}
 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        {/* Logo */}
-        <Link href="/" className="group relative z-50">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-            className="relative h-16 w-16 overflow-hidden rounded-2xl border-2 border-[#d4af37]/40 shadow-lg shadow-[#d4af37]/30 transition-all group-hover:border-[#d4af37]/60 group-hover:shadow-xl group-hover:shadow-[#d4af37]/40"
-          >
-            <Image
-              src="/logo.jpg"
-              alt="Celvo"
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 md:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group relative flex items-center gap-1 rounded-xl px-4 py-2 text-sm font-medium text-gray-300 transition-all hover:text-white"
+        {/* Left Side - Logo & Navigation */}
+        <div className="flex items-center gap-8">
+          {/* Logo */}
+          <Link href="/" className="group relative z-50">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="relative h-12 w-12 overflow-hidden rounded-xl border-2 border-[#d4af37]/40 shadow-lg shadow-[#d4af37]/30 transition-all group-hover:border-[#d4af37]/60 group-hover:shadow-xl group-hover:shadow-[#d4af37]/40"
             >
-              <span>{item.label}</span>
-              <span className="absolute inset-0 -z-10 rounded-xl bg-white/5 opacity-0 transition-opacity group-hover:opacity-100" />
-            </Link>
-          ))}
-        </nav>
+              <Image
+                src="/logo.jpg"
+                alt="Celvo"
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center gap-1 md:flex">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group relative flex items-center gap-1 rounded-xl px-4 py-2 text-sm font-medium text-gray-300 transition-all hover:text-white"
+              >
+                <span>{item.label}</span>
+                <span className="absolute inset-0 -z-10 rounded-xl bg-white/5 opacity-0 transition-opacity group-hover:opacity-100" />
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        {/* Right Side - Contact Button */}
+        <div className="hidden items-center gap-4 md:flex">
+          <a
+            href="tel:+905067000827"
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-[#d4af37] to-[#f0d882] px-5 py-2 text-sm font-semibold text-black shadow-lg shadow-[#d4af37]/30 transition-all hover:scale-105 hover:shadow-[#d4af37]/50"
+          >
+            <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              İletişim
+            </span>
+            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#f0d882] to-[#d4af37] opacity-0 transition-opacity group-hover:opacity-100" />
+          </a>
+        </div>
 
         {/* Mobile Menu Button */}
         <button

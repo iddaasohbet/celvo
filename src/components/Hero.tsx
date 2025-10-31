@@ -53,7 +53,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black pt-20 sm:pt-24">
+    <section className="relative min-h-screen overflow-hidden bg-black pt-16">
       {/* Premium Background Effects */}
       <div className="absolute inset-0 -z-10">
         {/* Main gradient overlay - subtle */}
@@ -76,7 +76,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-32 lg:py-40">
+      <div className="relative mx-auto max-w-7xl px-6 py-12 sm:py-20 lg:py-24">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left Column - Content */}
           <motion.div
