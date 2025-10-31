@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
+import VideoPopup from "@/components/VideoPopup";
 import Script from "next/script";
 
 export default function Home() {
@@ -79,6 +80,7 @@ export default function Home() {
         </main>
         <Footer />
         <FloatingContact />
+        <VideoPopup />
       </div>
     </>
   );
