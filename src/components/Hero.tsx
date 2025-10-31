@@ -53,30 +53,30 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black pt-16">
+    <section className="relative min-h-screen overflow-hidden bg-black pt-14">
       {/* Premium Background Effects */}
       <div className="absolute inset-0 -z-10">
-        {/* Main gradient overlay - subtle */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#d4af37]/5 via-black to-black" />
+        {/* Main gradient overlay - very subtle */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#d4af37]/3 via-black to-black" />
         
-        {/* Minimal golden accent - top left only */}
+        {/* Minimal golden accent - very subtle */}
         <motion.div
           animate={{
-            opacity: [0.1, 0.15, 0.1],
+            opacity: [0.03, 0.05, 0.03],
           }}
           transition={{
             duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute left-0 top-0 h-[400px] w-[400px] rounded-full bg-[#d4af37]/8 blur-[150px]"
+          className="absolute left-0 top-0 h-[300px] w-[300px] rounded-full bg-[#d4af37]/4 blur-[120px]"
         />
 
         {/* Subtle grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.01)_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 py-12 sm:py-20 lg:py-24">
+      <div className="relative mx-auto max-w-7xl px-6 py-8 sm:py-16 lg:py-20">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left Column - Content */}
           <motion.div
@@ -222,11 +222,11 @@ export default function Hero() {
           >
             {/* Main Image Container */}
             <div className="relative">
-              {/* Minimal glow effect behind image */}
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#d4af37]/10 to-[#f0d882]/10 blur-[80px]" />
+              {/* Minimal glow effect behind image - very subtle */}
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#d4af37]/5 to-[#f0d882]/5 blur-[60px]" />
               
               {/* Image carousel with premium border */}
-              <div className="relative overflow-hidden rounded-3xl border border-[#d4af37]/30 bg-gradient-to-br from-white/5 to-white/10 p-2 backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-3xl border border-[#d4af37]/20 bg-gradient-to-br from-white/3 to-white/5 p-2 backdrop-blur-sm">
                 <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
                   <div className="flex">
                     {products.map((product, index) => (
@@ -264,7 +264,7 @@ export default function Hero() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -right-4 -top-4 rounded-2xl border border-[#d4af37]/30 bg-black/90 p-4 backdrop-blur-xl"
+                className="absolute -right-4 -top-4 rounded-2xl border border-[#d4af37]/20 bg-black/95 p-4 backdrop-blur-xl"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#d4af37] to-[#f0d882]">
