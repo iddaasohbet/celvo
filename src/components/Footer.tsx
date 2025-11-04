@@ -118,6 +118,37 @@ export default function Footer() {
           </motion.a>
         </div>
 
+        {/* Quick Links */}
+        <div className="mb-12 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="/hakkimizda"
+            className="rounded-lg px-4 py-2 text-sm font-medium text-gray-400 transition-colors hover:text-[#d4af37]"
+          >
+            Hakkımızda
+          </Link>
+          <span className="text-gray-700">•</span>
+          <Link
+            href="/tanitim-videosu"
+            className="rounded-lg px-4 py-2 text-sm font-medium text-gray-400 transition-colors hover:text-[#d4af37]"
+          >
+            Tanıtım Videosu
+          </Link>
+          <span className="text-gray-700">•</span>
+          <Link
+            href="/koleksiyon"
+            className="rounded-lg px-4 py-2 text-sm font-medium text-gray-400 transition-colors hover:text-[#d4af37]"
+          >
+            Koleksiyon
+          </Link>
+          <span className="text-gray-700">•</span>
+          <Link
+            href="/iletisim"
+            className="rounded-lg px-4 py-2 text-sm font-medium text-gray-400 transition-colors hover:text-[#d4af37]"
+          >
+            İletişim
+          </Link>
+        </div>
+
         {/* Divider */}
         <div className="mb-8 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
